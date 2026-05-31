@@ -116,7 +116,6 @@ nav {
   z-index: 100;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 0 clamp(1.25rem, 5vw, 3rem);
   height: 64px;
   background: rgba(247,247,246,0.85);
@@ -138,6 +137,7 @@ nav.scrolled {
   color: var(--text-primary);
   text-decoration: none;
   letter-spacing: -0.02em;
+  flex-shrink: 0;
 }
 .nav-logo span { color: var(--accent); }
 
@@ -146,6 +146,9 @@ nav.scrolled {
   align-items: center;
   gap: 0.25rem;
   list-style: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .nav-links a {
   font-size: 0.875rem;
@@ -170,6 +173,8 @@ nav.scrolled {
   border: 1px solid var(--border);
   border-radius: 99px;
   padding: 0.25rem;
+  margin-left: auto;
+  flex-shrink: 0;
 }
 
 .lang-btn {

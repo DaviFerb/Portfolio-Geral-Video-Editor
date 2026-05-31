@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Davik | Editor de Vídeo</title>
+  <meta name="description" content="Editor de vídeo especializado em Long-form, Short-form, Motion Graphics e Sound Design. Trabalho com criadores de conteúdo e empresas." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Davik | Editor de Vídeo" />
+  <meta property="og:description" content="Edição profissional para criadores e empresas." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     NAVIGATION
+     ══════════════════════════════════════════ -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">Davik<span>.</span></a>
+
+  <ul class="nav-links">
+    <li><a id="nav-sobre"     href="#sobre">Sobre</a></li>
+    <li><a id="nav-servicos"  href="#servicos">Serviços</a></li>
+    <li><a id="nav-portfolio" href="#portfolio">Portfólio</a></li>
+    <li><a id="nav-contato"   href="#contato">Contato</a></li>
+  </ul>
+
+  <!-- Language switcher (desktop) -->
+  <div class="lang-switcher" aria-label="Selecionar idioma">
+    <button class="lang-btn active" data-lang="pt" aria-label="Português">PT</button>
+    <button class="lang-btn"        data-lang="en" aria-label="English">EN</button>
+  </div>
+
+  <button class="nav-hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+  <a id="mob-sobre"     href="#sobre">Sobre</a>
+  <a id="mob-servicos"  href="#servicos">Serviços</a>
+  <a id="mob-portfolio" href="#portfolio">Portfólio</a>
+  <a id="mob-contato"   href="#contato">Contato</a>
+
+  <!-- Language switcher (mobile) -->
+  <div class="mobile-lang">
+    <button class="lang-btn active" data-lang="pt">PT-BR</button>
+    <button class="lang-btn"        data-lang="en">EN</button>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     HERO
+     ══════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-inner container">
+
+    <div class="hero-eyebrow fade-up">
+      <span class="dot" aria-hidden="true"></span>
+      <span id="hero-eyebrow-text">Disponível para novos projetos</span>
+    </div>
+
+    <h1 id="hero-title" class="hero-title fade-up delay-1">
+      Edição que <em>transforma</em><br />conteúdo em resultado.
+    </h1>
+
+    <p id="hero-desc" class="hero-desc fade-up delay-2">
+      Editor de vídeo especializado em Long-form, Short-form, Motion Graphics e Sound Design. Trabalho com criadores e empresas que levam qualidade a sério.
+    </p>
+
+    <div class="hero-actions fade-up delay-3">
+      <a id="hero-btn-work" href="#portfolio" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6 3l5 5-5 5V3z"/></svg>
+        Ver Trabalhos
+      </a>
+      <a id="hero-btn-contact" href="#contato" class="btn-secondary">
+        Entrar em Contato
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     SOBRE
+     ══════════════════════════════════════════ -->
+<section id="sobre">
+  <div class="container">
+    <div class="about-grid">
+
+      <!-- Left: text -->
+      <div class="about-content">
+        <div id="about-tag" class="section-tag fade-up">Sobre mim</div>
+        <h2 id="about-title" class="section-title fade-up delay-1">
+          Oi, eu sou o Davik — editor que pensa no resultado.
+        </h2>
+        <p id="about-text1" class="about-text fade-up delay-2">
+          Trabalho com edição de vídeo atendendo criadores de conteúdo, marcas e empresas que buscam qualidade acima da média. Minha abordagem combina técnica refinada com olhar criativo — cada corte tem uma razão, cada trilha tem um propósito.
+        </p>
+        <p id="about-text2" class="about-text fade-up delay-2">
+          Acredito que um bom vídeo não é só bonito: ele retém atenção, comunica com clareza e faz a mensagem chegar do jeito certo. É isso que entrego.
+        </p>
+        <div class="about-tags fade-up delay-3">
+          <span class="about-tag">Adobe Premiere Pro</span>
+          <span class="about-tag">After Effects</span>
+          <span class="about-tag">Photoshop</span>
+        </div>
+      </div>
+
+      <!-- Right: differentials -->
+      <div class="about-diffs fade-up delay-2">
+
+        <div class="about-diff">
+          <div class="diff-icon" aria-hidden="true">🎯</div>
+          <div class="diff-text">
+            <strong id="diff1-title">Foco em resultado</strong>
+            <span id="diff1-desc">Edito pensando no objetivo final: retenção, conversão ou engajamento.</span>
+          </div>
+        </div>
+
+        <div class="about-diff">
+          <div class="diff-icon" aria-hidden="true">⚡</div>
+          <div class="diff-text">
+            <strong id="diff2-title">Comunicação clara e entrega no prazo</strong>
+            <span id="diff2-desc">Sem sumiços, sem atraso. Processo organizado do início ao fim.</span>
+          </div>
+        </div>
+
+        <div class="about-diff">
+          <div class="diff-icon" aria-hidden="true">🎨</div>
+          <div class="diff-text">
+            <strong id="diff3-title">Olhar estético apurado</strong>
+            <span id="diff3-desc">Atenção a cada detalhe visual e sonoro que eleva a qualidade percebida.</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     SERVIÇOS
+     ══════════════════════════════════════════ -->
+<section id="servicos">
+  <div class="container">
+    <div class="section-header">
+      <div id="services-tag" class="section-tag fade-up">Serviços</div>
+      <h2 id="services-title" class="section-title fade-up delay-1">O que eu entrego</h2>
+      <p id="services-sub" class="section-sub fade-up delay-2">
+        Do roteiro ao produto final — edição completa para o formato que o seu conteúdo exige.
+      </p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card fade-up">
+        <div class="service-icon" aria-hidden="true">🎬</div>
+        <h3 id="svc1-title">Long-form Editing</h3>
+        <p id="svc1-desc">Edição completa de vídeos longos: YouTube, documentários, entrevistas, aulas e vídeos de vendas. Corte preciso, ritmo certo e retenção em foco.</p>
+      </div>
+
+      <div class="service-card fade-up delay-1">
+        <div class="service-icon" aria-hidden="true">📱</div>
+        <h3 id="svc2-title">Short-form Editing</h3>
+        <p id="svc2-desc">Reels, Shorts e TikToks que prendem nos primeiros segundos. Edição acelerada, captioning moderno e ganchos visuais que funcionam.</p>
+      </div>
+
+      <div class="service-card fade-up delay-2">
+        <div class="service-icon" aria-hidden="true">✨</div>
+        <h3 id="svc3-title">Motion Graphics</h3>
+        <p id="svc3-desc">Animações leves e elegantes: lower thirds, títulos animados, intros e elementos gráficos que elevam a produção sem pesar.</p>
+      </div>
+
+      <div class="service-card fade-up delay-3">
+        <div class="service-icon" aria-hidden="true">🔊</div>
+        <h3 id="svc4-title">Sound Design</h3>
+        <p id="svc4-desc">Trilha certa, efeitos no momento exato e áudio limpo. O som que a maioria ignora é o que diferencia um vídeo comum de um profissional.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     PORTFÓLIO
+     ══════════════════════════════════════════ -->
+<section id="portfolio">
+  <div class="container">
+
+    <div class="section-header">
+      <div id="portfolio-tag" class="section-tag fade-up">Portfólio</div>
+      <h2 id="portfolio-title" class="section-title fade-up delay-1">Trabalhos recentes</h2>
+      <p id="portfolio-sub" class="section-sub fade-up delay-2">
+        Uma seleção dos projetos que mais me orgulho — Long-form e Short-form.
+      </p>
+    </div>
+
+    <!-- Filter tabs -->
+    <div class="port-tabs fade-up" role="tablist" aria-label="Filtro de portfólio">
+      <button id="tab-all"       class="port-tab active" data-filter="all"       role="tab" aria-selected="true">Todos</button>
+      <button id="tab-longform"  class="port-tab"        data-filter="longform"  role="tab" aria-selected="false">Long-form</button>
+      <button id="tab-shortform" class="port-tab"        data-filter="shortform" role="tab" aria-selected="false">Short-form</button>
+      <button id="tab-motion"    class="port-tab"        data-filter="motion"    role="tab" aria-selected="false">Motion</button>
+    </div>
+
+    <!-- Cards -->
+    <div class="port-grid">
+
+      <article class="port-card" data-category="longform">
+        <div class="port-thumb">
+          <div class="port-thumb-bg" style="background:linear-gradient(135deg,#1e3a5f,#2d6a9f);">🎙️</div>
+          <div class="port-thumb-overlay">
+            <div class="port-play-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="port-body">
+          <div class="port-cat">Long-form · YouTube</div>
+          <h3>Startup Stories — Série Documental</h3>
+          <p>Série de 6 episódios contando histórias de founders brasileiros. Edição narrativa, trilha original e color grading cinematográfico.</p>
+          <a href="#" class="btn-watch">
+            <span class="btn-watch-text">Assistir</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="port-card" data-category="shortform">
+        <div class="port-thumb">
+          <div class="port-thumb-bg" style="background:linear-gradient(135deg,#4a1942,#c0392b);">⚡</div>
+          <div class="port-thumb-overlay">
+            <div class="port-play-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="port-body">
+          <div class="port-cat">Short-form · Reels</div>
+          <h3>Campanha de Lançamento — Produto SaaS</h3>
+          <p>Pack de 12 Reels para lançamento de produto. Alta retenção e CTR acima da média do nicho tech.</p>
+          <a href="#" class="btn-watch">
+            <span class="btn-watch-text">Assistir</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="port-card" data-category="longform">
+        <div class="port-thumb">
+          <div class="port-thumb-bg" style="background:linear-gradient(135deg,#1a472a,#2d8a4e);">📚</div>
+          <div class="port-thumb-overlay">
+            <div class="port-play-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="port-body">
+          <div class="port-cat">Long-form · Educacional</div>
+          <h3>Curso Online — Marketing Digital</h3>
+          <p>Edição de módulos de um curso de marketing com 12h de conteúdo. Corte dinâmico, captions e motion leve para didática máxima.</p>
+          <a href="#" class="btn-watch">
+            <span class="btn-watch-text">Assistir</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="port-card" data-category="motion">
+        <div class="port-thumb">
+          <div class="port-thumb-bg" style="background:linear-gradient(135deg,#2c1654,#6c3483);">✨</div>
+          <div class="port-thumb-overlay">
+            <div class="port-play-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="port-body">
+          <div class="port-cat">Motion Graphics</div>
+          <h3>Identidade Visual Animada — Canal Tech</h3>
+          <p>Intro animada, lower thirds, end card e transições personalizadas para canal de tecnologia com 300k inscritos.</p>
+          <a href="#" class="btn-watch">
+            <span class="btn-watch-text">Assistir</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="port-card" data-category="shortform">
+        <div class="port-thumb">
+          <div class="port-thumb-bg" style="background:linear-gradient(135deg,#7b3f00,#d4851a);">🎤</div>
+          <div class="port-thumb-overlay">
+            <div class="port-play-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="port-body">
+          <div class="port-cat">Short-form · TikTok</div>
+          <h3>Clips Virais — Podcaster</h3>
+          <p>Seleção e edição de clipes virais a partir de podcasts longos. Captions dinâmicos, reframing e gancho nos primeiros 2 segundos.</p>
+          <a href="#" class="btn-watch">
+            <span class="btn-watch-text">Assistir</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="port-card" data-category="longform">
+        <div class="port-thumb">
+          <div class="port-thumb-bg" style="background:linear-gradient(135deg,#0d2137,#1a5276);">💼</div>
+          <div class="port-thumb-overlay">
+            <div class="port-play-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="port-body">
+          <div class="port-cat">Long-form · Vídeo de Vendas</div>
+          <h3>VSL — Infoproduto de Alto Ticket</h3>
+          <p>Vídeo de vendas de 45 minutos com edição focada em conversão: pacing estratégico, trilha emocional e CTA no momento certo.</p>
+          <a href="#" class="btn-watch">
+            <span class="btn-watch-text">Assistir</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     CONTATO
+     ══════════════════════════════════════════ -->
+<section id="contato">
+  <div class="container">
+    <div class="contact-centered">
+
+      <div id="contact-tag" class="section-tag fade-up">Contato</div>
+      <h2 id="contact-title" class="section-title fade-up delay-1">Vamos trabalhar juntos?</h2>
+      <p id="contact-sub" class="section-sub fade-up delay-2">
+        Me conta o seu projeto. Respondo em até 24h e dou uma devolutiva clara sobre como posso ajudar.
+      </p>
+
+      <div class="contact-links fade-up delay-3">
+
+        <a href="https://discord.com/users/seuusuario" class="contact-link" target="_blank" rel="noopener noreferrer">
+          <div class="contact-link-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#5865F2" aria-hidden="true"><path d="M20.317 4.492c-1.53-.69-3.17-1.2-4.885-1.49a.075.075 0 0 0-.079.036c-.21.369-.444.85-.608 1.23a18.566 18.566 0 0 0-5.487 0 12.36 12.36 0 0 0-.617-1.23A.077.077 0 0 0 8.562 3c-1.714.29-3.354.8-4.885 1.491a.07.07 0 0 0-.032.027C.533 9.093-.32 13.555.099 17.961a.08.08 0 0 0 .031.055 20.03 20.03 0 0 0 5.993 2.98.078.078 0 0 0 .084-.026c.462-.62.874-1.275 1.226-1.963.021-.04.001-.088-.041-.104a13.201 13.201 0 0 1-1.872-.878.075.075 0 0 1-.008-.125c.126-.093.252-.19.372-.287a.075.075 0 0 1 .078-.01c3.927 1.764 8.18 1.764 12.061 0a.075.075 0 0 1 .079.009c.12.098.245.195.372.288a.075.075 0 0 1-.006.125c-.598.344-1.22.635-1.873.877a.075.075 0 0 0-.041.105c.36.687.772 1.341 1.225 1.962a.077.077 0 0 0 .084.028 19.963 19.963 0 0 0 6.002-2.981.076.076 0 0 0 .032-.054c.5-5.094-.838-9.52-3.549-13.442a.06.06 0 0 0-.031-.028z"/></svg>
+          </div>
+          <div class="contact-link-info">
+            <strong>Discord</strong>
+            <span>davik#0000</span>
+          </div>
+          <span class="contact-link-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a href="mailto:seuemail@email.com" class="contact-link">
+          <div class="contact-link-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="contact-link-info">
+            <strong>Email</strong>
+            <span>seuemail@email.com</span>
+          </div>
+          <span class="contact-link-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a href="https://twitter.com/seuusuario" class="contact-link" target="_blank" rel="noopener noreferrer">
+          <div class="contact-link-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--text-primary)" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </div>
+          <div class="contact-link-info">
+            <strong>X / Twitter</strong>
+            <span>@seuusuario</span>
+          </div>
+          <span class="contact-link-arrow" aria-hidden="true">→</span>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+     ══════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <a href="#hero" class="footer-logo">Davik<span>.</span></a>
+    <p id="footer-copy" class="footer-copy">© 2025 Davik — Editor de Vídeo</p>
+    <nav class="footer-links" aria-label="Links do rodapé">
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#portfolio">Portfólio</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

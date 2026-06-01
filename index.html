@@ -39,19 +39,22 @@ section{padding:clamp(5rem,10vw,8rem) clamp(1.25rem,5vw,3rem)}
 h2.section-title{font-family:var(--font-display);font-size:clamp(1.85rem,3.5vw,2.5rem);font-weight:800;line-height:1.1;letter-spacing:-.03em;color:var(--text-primary);margin-bottom:1rem}
 .section-sub{font-size:1.05rem;color:var(--text-secondary);max-width:520px;line-height:1.7}
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;padding:0 clamp(1.25rem,5vw,3rem);height:64px;background:rgba(247,247,246,.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border-subtle);transition:var(--transition)}
-nav.scrolled{background:rgba(247,247,246,.96);box-shadow:var(--shadow-sm)}
-.nav-logo{font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--text-primary);text-decoration:none;letter-spacing:-.02em;flex-shrink:0}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;padding:0 clamp(1.25rem,5vw,3rem);height:64px;background:var(--text-primary);backdrop-filter:none;border-bottom:none;transition:var(--transition)}
+nav.scrolled{background:var(--text-primary);box-shadow:0 1px 20px rgba(0,0,0,.25)}
+.nav-left{display:flex;align-items:center;flex:1}
+.nav-center{display:flex;align-items:center;justify-content:center;flex:1}
+.nav-right{display:flex;align-items:center;justify-content:flex-end;gap:.75rem;flex:1}
+.nav-logo{font-family:var(--font-display);font-size:1.05rem;font-weight:800;color:#fff;text-decoration:none;letter-spacing:-.03em}
 .nav-logo span{color:var(--accent)}
-.nav-links{display:flex;align-items:center;gap:.25rem;list-style:none;position:absolute;left:50%;transform:translateX(-50%)}
-.nav-links a{font-size:.875rem;font-weight:450;color:var(--text-secondary);text-decoration:none;padding:.4rem .85rem;border-radius:99px;transition:var(--transition)}
-.nav-links a:hover,.nav-links a.active{color:var(--text-primary);background:rgba(0,0,0,.04)}
-.lang-switcher{display:flex;align-items:center;gap:.15rem;background:var(--bg);border:1px solid var(--border);border-radius:99px;padding:.25rem;margin-left:auto;flex-shrink:0}
-.lang-btn{font-family:var(--font-sans);font-size:.78rem;font-weight:600;letter-spacing:.03em;color:var(--text-tertiary);background:none;border:none;padding:.3rem .65rem;border-radius:99px;cursor:pointer;transition:var(--transition)}
-.lang-btn.active{color:var(--text-primary);background:var(--surface);box-shadow:var(--shadow-sm)}
-.lang-btn:hover:not(.active){color:var(--text-secondary)}
+.nav-links{display:flex;align-items:center;gap:.1rem;list-style:none}
+.nav-links a{font-size:.875rem;font-weight:400;color:rgba(255,255,255,.55);text-decoration:none;padding:.4rem .85rem;border-radius:99px;transition:var(--transition)}
+.nav-links a:hover,.nav-links a.active{color:#fff;background:rgba(255,255,255,.08)}
+.lang-switcher{display:flex;align-items:center;gap:.15rem;background:var(--accent);border:none;border-radius:99px;padding:.25rem}
+.lang-btn{font-family:var(--font-sans);font-size:.78rem;font-weight:600;letter-spacing:.03em;color:rgba(255,255,255,.8);background:none;border:none;padding:.3rem .65rem;border-radius:99px;cursor:pointer;transition:var(--transition)}
+.lang-btn.active{color:#fff;background:rgba(255,255,255,.18);box-shadow:none}
+.lang-btn:hover:not(.active){color:#fff;background:rgba(255,255,255,.1)}
 .nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
-.nav-hamburger span{display:block;width:22px;height:2px;background:var(--text-primary);border-radius:2px;transition:var(--transition)}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:var(--transition)}
 .mobile-menu{display:none;position:fixed;inset:0;z-index:99;background:rgba(247,247,246,.98);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;padding-top:64px}
 .mobile-menu.open{display:flex}
 .mobile-menu a{font-family:var(--font-display);font-size:1.5rem;font-weight:500;color:var(--text-primary);text-decoration:none;transition:var(--transition)}
@@ -130,6 +133,12 @@ nav.scrolled{background:rgba(247,247,246,.96);box-shadow:var(--shadow-sm)}
 .contact-link-info strong{display:block;font-size:.9rem;font-weight:500}
 .contact-link-info span{font-size:.8rem;color:var(--text-secondary)}
 .contact-link-arrow{margin-left:auto;color:var(--text-tertiary);font-size:1rem}
+/* BACK TO TOP */
+.back-to-top-wrap{display:flex;justify-content:center;padding:3rem clamp(1.25rem,5vw,3rem) 4rem;background:var(--bg)}
+.btn-back-top{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-sans);font-size:.875rem;font-weight:500;color:var(--text-secondary);background:var(--surface);border:1px solid var(--border);border-radius:99px;padding:.65rem 1.4rem;cursor:pointer;text-decoration:none;transition:var(--transition);box-shadow:var(--shadow-sm)}
+.btn-back-top:hover{color:var(--text-primary);border-color:var(--accent);transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.btn-back-top svg{width:14px;height:14px;transition:var(--transition)}
+.btn-back-top:hover svg{transform:translateY(-2px)}
 /* FOOTER */
 footer{background:var(--surface);border-top:1px solid var(--border-subtle);padding:2.5rem clamp(1.25rem,5vw,3rem)}
 .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
@@ -169,20 +178,26 @@ footer{background:var(--surface);border-top:1px solid var(--border-subtle);paddi
      NAVIGATION
      ══════════════════════════════════════════ -->
 <nav id="navbar">
-  <a href="#hero" class="nav-logo">Davik<span>.</span></a>
-  <ul class="nav-links">
-    <li><a id="nav-sobre"     href="#sobre">Sobre</a></li>
-    <li><a id="nav-servicos"  href="#servicos">Serviços</a></li>
-    <li><a id="nav-portfolio" href="#portfolio">Portfólio</a></li>
-    <li><a id="nav-contato"   href="#contato">Contato</a></li>
-  </ul>
-  <div class="lang-switcher" aria-label="Selecionar idioma">
-    <button class="lang-btn active" data-lang="pt">PT</button>
-    <button class="lang-btn"        data-lang="en">EN</button>
+  <div class="nav-left">
+    <a href="#hero" class="nav-logo">Davik<span>.</span></a>
   </div>
-  <button class="nav-hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
+  <div class="nav-center">
+    <ul class="nav-links">
+      <li><a id="nav-sobre"     href="#sobre">Sobre</a></li>
+      <li><a id="nav-servicos"  href="#servicos">Serviços</a></li>
+      <li><a id="nav-portfolio" href="#portfolio">Portfólio</a></li>
+      <li><a id="nav-contato"   href="#contato">Contato</a></li>
+    </ul>
+  </div>
+  <div class="nav-right">
+    <div class="lang-switcher" aria-label="Selecionar idioma">
+      <button class="lang-btn active" data-lang="pt">PT</button>
+      <button class="lang-btn"        data-lang="en">EN</button>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
 
 <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
@@ -451,6 +466,17 @@ footer{background:var(--surface);border-top:1px solid var(--border-subtle);paddi
 
 
 <!-- ══════════════════════════════════════════
+     BACK TO TOP
+     ══════════════════════════════════════════ -->
+<div class="back-to-top-wrap">
+  <button class="btn-back-top" id="btnBackTop" aria-label="Voltar ao topo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    Voltar ao topo
+  </button>
+</div>
+
+
+<!-- ══════════════════════════════════════════
      FOOTER
      ══════════════════════════════════════════ -->
 <footer>
@@ -600,6 +626,8 @@ function applyLang(lang){
   document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.toggle('active',b.dataset.lang===lang);});
 }
 document.querySelectorAll('.lang-btn').forEach(function(b){b.addEventListener('click',function(){applyLang(b.dataset.lang);});});
+var btnBackTop=document.getElementById('btnBackTop');
+if(btnBackTop){btnBackTop.addEventListener('click',function(){smoothScrollTo(0,800);});}
 })();
 </script>
 </body>

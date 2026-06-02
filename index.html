@@ -39,20 +39,23 @@ section{padding:clamp(5rem,10vw,8rem) clamp(1.25rem,5vw,3rem)}
 h2.section-title{font-family:var(--font-display);font-size:clamp(1.85rem,3.5vw,2.5rem);font-weight:800;line-height:1.1;letter-spacing:-.03em;color:var(--text-primary);margin-bottom:1rem}
 .section-sub{font-size:1.05rem;color:var(--text-secondary);max-width:520px;line-height:1.7}
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;padding:0 clamp(1.25rem,5vw,3rem);height:64px;background:var(--text-primary);backdrop-filter:none;border-bottom:none;transition:var(--transition)}
-nav.scrolled{background:var(--text-primary);box-shadow:0 1px 20px rgba(0,0,0,.25)}
-.nav-left{display:flex;align-items:center;flex:1}
-.nav-center{display:flex;align-items:center;justify-content:center;flex:1}
-.nav-right{display:flex;align-items:center;justify-content:flex-end;gap:.75rem;flex:1}
-.nav-logo{font-family:var(--font-display);font-size:1.05rem;font-weight:800;color:#fff;text-decoration:none;letter-spacing:-.03em}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;padding:0 clamp(1.25rem,5vw,3rem);height:60px;background:#0a0a0a;border-bottom:none;transition:var(--transition)}
+nav.scrolled{box-shadow:0 1px 24px rgba(0,0,0,.4)}
+.nav-left{display:flex;align-items:center;flex-shrink:0}
+.nav-center{display:flex;align-items:center;flex:1;padding-left:3rem}
+.nav-right{display:flex;align-items:center;gap:.75rem;margin-left:auto;flex-shrink:0}
+.nav-logo{font-family:var(--font-display);font-size:1.1rem;font-weight:800;color:#fff;text-decoration:none;letter-spacing:-.03em;white-space:nowrap}
 .nav-logo span{color:var(--accent)}
-.nav-links{display:flex;align-items:center;gap:.1rem;list-style:none}
-.nav-links a{font-size:.875rem;font-weight:400;color:rgba(255,255,255,.55);text-decoration:none;padding:.4rem .85rem;border-radius:99px;transition:var(--transition)}
-.nav-links a:hover,.nav-links a.active{color:#fff;background:rgba(255,255,255,.08)}
-.lang-switcher{display:flex;align-items:center;gap:.15rem;background:var(--accent);border:none;border-radius:99px;padding:.25rem}
-.lang-btn{font-family:var(--font-sans);font-size:.78rem;font-weight:600;letter-spacing:.03em;color:rgba(255,255,255,.8);background:none;border:none;padding:.3rem .65rem;border-radius:99px;cursor:pointer;transition:var(--transition)}
-.lang-btn.active{color:#fff;background:rgba(255,255,255,.18);box-shadow:none}
-.lang-btn:hover:not(.active){color:#fff;background:rgba(255,255,255,.1)}
+.nav-links{display:flex;align-items:center;gap:.25rem;list-style:none}
+.nav-links a{font-size:.875rem;font-weight:400;color:rgba(255,255,255,.5);text-decoration:none;padding:.35rem .75rem;border-radius:6px;transition:var(--transition)}
+.nav-links a:hover,.nav-links a.active{color:#fff;background:transparent}
+.lang-switcher{display:flex;align-items:center;gap:.1rem;background:none;border:none;padding:0}
+.lang-btn{font-family:var(--font-sans);font-size:.82rem;font-weight:600;letter-spacing:.02em;color:rgba(255,255,255,.45);background:none;border:none;padding:.42rem .7rem;border-radius:6px;cursor:pointer;transition:var(--transition)}
+.lang-btn.active{color:#fff}
+.lang-btn:hover:not(.active){color:rgba(255,255,255,.75)}
+.lang-divider{width:1px;height:14px;background:rgba(255,255,255,.2);flex-shrink:0}
+.nav-cta{font-family:var(--font-sans);font-size:.875rem;font-weight:600;color:#fff;background:var(--accent);border:none;border-radius:99px;padding:.5rem 1.2rem;cursor:pointer;text-decoration:none;transition:var(--transition);white-space:nowrap}
+.nav-cta:hover{background:var(--accent-hover);transform:translateY(-1px)}
 .nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
 .nav-hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:var(--transition)}
 .mobile-menu{display:none;position:fixed;inset:0;z-index:99;background:rgba(247,247,246,.98);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;padding-top:64px}
@@ -158,7 +161,7 @@ footer{background:var(--surface);border-top:1px solid var(--border-subtle);paddi
 /* RESPONSIVE */
 @media(max-width:900px){.about-grid{grid-template-columns:1fr}}
 @media(max-width:640px){
-  .nav-links,.lang-switcher{display:none}
+  .nav-links,.lang-switcher,.nav-cta{display:none}
   .nav-hamburger{display:flex}
   .hero-title{font-size:2.2rem}
   .services-grid{grid-template-columns:1fr 1fr}
@@ -192,8 +195,10 @@ footer{background:var(--surface);border-top:1px solid var(--border-subtle);paddi
   <div class="nav-right">
     <div class="lang-switcher" aria-label="Selecionar idioma">
       <button class="lang-btn active" data-lang="pt">PT</button>
-      <button class="lang-btn"        data-lang="en">EN</button>
+      <div class="lang-divider" aria-hidden="true"></div>
+      <button class="lang-btn" data-lang="en">EN</button>
     </div>
+    <a id="nav-cta-btn" href="#contato" class="nav-cta">Falar comigo</a>
     <button class="nav-hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>

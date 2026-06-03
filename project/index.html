@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Davik — Editor de vídeo freelancer especializado em Long-form, Short-form, Motion Graphics e Sound Design.">
+  <title>Davik — Editor de Vídeo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ====================================================
+       NAVBAR
+  ===================================================== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+
+      <a href="#inicio" class="nav-brand" aria-label="Davik — Início">Davik.</a>
+
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#sobre"    class="nav-link" data-i18n="nav.sobre">Sobre</a>
+        <a href="#servicos" class="nav-link" data-i18n="nav.servicos">Serviços</a>
+        <a href="#portfolio" class="nav-link" data-i18n="nav.portfolio">Portfólio</a>
+        <a href="#contato"  class="nav-link" data-i18n="nav.contato">Contato</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="lang-switcher" role="group" aria-label="Seleção de idioma">
+          <button class="lang-btn active" data-lang="pt" aria-pressed="true">PT-BR</button>
+          <span class="lang-sep" aria-hidden="true">|</span>
+          <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span class="toggle-bar bar-1"></span>
+          <span class="toggle-bar bar-2"></span>
+          <span class="toggle-bar bar-3"></span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <nav class="mobile-nav" aria-label="Navegação mobile">
+        <a href="#sobre"    class="mobile-link" data-i18n="nav.sobre">Sobre</a>
+        <a href="#servicos" class="mobile-link" data-i18n="nav.servicos">Serviços</a>
+        <a href="#portfolio" class="mobile-link" data-i18n="nav.portfolio">Portfólio</a>
+        <a href="#contato"  class="mobile-link" data-i18n="nav.contato">Contato</a>
+      </nav>
+      <div class="mobile-lang" role="group" aria-label="Seleção de idioma mobile">
+        <button class="lang-btn active" data-lang="pt" aria-pressed="true">PT-BR</button>
+        <span class="lang-sep" aria-hidden="true">|</span>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- ====================================================
+         HERO
+    ===================================================== -->
+    <section class="hero" id="inicio" aria-label="Apresentação">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hero-orb orb-1"></div>
+        <div class="hero-orb orb-2"></div>
+        <div class="hero-dots"></div>
+      </div>
+
+      <div class="container">
+        <div class="hero-content">
+
+          <div class="badge fade-in">
+            <span class="badge-dot" aria-hidden="true"></span>
+            <span data-i18n="hero.badge">Disponível para novos projetos</span>
+          </div>
+
+          <h1 class="hero-title fade-in fade-delay-1">
+            <span data-i18n="hero.title.before">Edição que </span><em class="accent-word" data-i18n="hero.title.highlight">transforma</em><br>
+            <span data-i18n="hero.title.after">conteúdo em resultado.</span>
+          </h1>
+
+          <p class="hero-sub fade-in fade-delay-2" data-i18n="hero.subtitle">
+            Editor de vídeo especializado em Long-form, Short-form, Motion Graphics e Sound Design.
+          </p>
+
+          <div class="hero-cta fade-in fade-delay-3">
+            <a href="#portfolio" class="btn btn-primary" data-i18n="hero.cta.work">Ver Trabalhos</a>
+            <a href="#contato"   class="btn btn-outline" data-i18n="hero.cta.contact">Entrar em Contato</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================
+         SOBRE
+    ===================================================== -->
+    <section class="section" id="sobre" aria-label="Sobre Davik">
+      <div class="container">
+
+        <span class="section-eyebrow reveal" data-i18n="sobre.label">Sobre</span>
+
+        <div class="sobre-grid">
+          <div class="sobre-left">
+            <h2 class="section-title reveal reveal-d1" data-i18n="sobre.title">
+              Cada projeto começa com intenção.
+            </h2>
+          </div>
+          <div class="sobre-right">
+            <p class="body-text reveal reveal-d2" data-i18n="sobre.p1">
+              Sou um editor de vídeo focado em transformar ideias em peças audiovisuais que realmente comunicam. Meu processo é estruturado desde o briefing até a entrega final — sem ruído no meio do caminho.
+            </p>
+            <p class="body-text reveal reveal-d3" data-i18n="sobre.p2">
+              Trabalho com atenção aos detalhes que fazem diferença: cortes no tempo certo, trilha sonora que reforça a narrativa, motion que agrega sem distrair. O resultado é um conteúdo que parece intencional em cada frame.
+            </p>
+            <p class="body-text reveal reveal-d4" data-i18n="sobre.p3">
+              Priorizo clareza na comunicação, prazos reais e revisões organizadas. Porque um bom projeto não é só sobre a edição — é sobre a experiência de trabalhar junto.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ====================================================
+         SERVIÇOS
+    ===================================================== -->
+    <section class="section section-alt" id="servicos" aria-label="Serviços">
+      <div class="container">
+
+        <span class="section-eyebrow reveal" data-i18n="servicos.label">Serviços</span>
+        <h2 class="section-title reveal reveal-d1" data-i18n="servicos.title">O que eu ofereço.</h2>
+
+        <div class="services-grid">
+
+          <!-- Long-form -->
+          <article class="service-card reveal reveal-d1">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2.5"/>
+                <path d="M9.5 8.5l6 3.5-6 3.5V8.5z" fill="currentColor" stroke="none"/>
+                <path d="M2 8h1.5M2 12h1.5M2 16h1.5M22 8h-1.5M22 12h-1.5M22 16h-1.5"/>
+              </svg>
+            </div>
+            <h3 class="service-name" data-i18n="servico.longform.title">Long-form Editing</h3>
+            <p class="service-desc" data-i18n="servico.longform.desc">Edição completa de podcasts, vlogs, documentários e vídeos extensos. Estrutura narrativa, pacing e identidade visual consistente em cada entrega.</p>
+          </article>
+
+          <!-- Short-form -->
+          <article class="service-card reveal reveal-d2">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="7" y="2" width="10" height="20" rx="2.5"/>
+                <path d="M10.5 9.5l4 2.5-4 2.5V9.5z" fill="currentColor" stroke="none"/>
+              </svg>
+            </div>
+            <h3 class="service-name" data-i18n="servico.shortform.title">Short-form Editing</h3>
+            <p class="service-desc" data-i18n="servico.shortform.desc">Reels, Shorts e TikToks com cortes dinâmicos, legenda estilizada e ritmo ajustado para retenção máxima. Conteúdo feito para parar o scroll.</p>
+          </article>
+
+          <!-- Motion -->
+          <article class="service-card reveal reveal-d3">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2l2 6h6l-5 3.5 2 6L12 14l-5 3.5 2-6L4 8h6l2-6z"/>
+                <circle cx="5.5" cy="17.5" r="1.5"/>
+                <circle cx="18.5" cy="5.5" r="1.5"/>
+              </svg>
+            </div>
+            <h3 class="service-name" data-i18n="servico.motion.title">Motion Graphics</h3>
+            <p class="service-desc" data-i18n="servico.motion.desc">Animações, lower thirds, transições personalizadas e identidade visual em movimento. Motion que serve ao conteúdo sem sobrepor a mensagem.</p>
+          </article>
+
+          <!-- Sound -->
+          <article class="service-card reveal reveal-d4">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 12h2M6 6.5v11M10 3.5v17M14 8v8M18 5.5v13M22 12h-2"/>
+              </svg>
+            </div>
+            <h3 class="service-name" data-i18n="servico.sound.title">Sound Design</h3>
+            <p class="service-desc" data-i18n="servico.sound.desc">Tratamento de áudio, trilhas personalizadas, efeitos sonoros e mixagem. O som certo no momento certo muda completamente a percepção de um vídeo.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================
+         PORTFÓLIO
+    ===================================================== -->
+    <section class="section" id="portfolio" aria-label="Portfólio">
+      <div class="container">
+
+        <span class="section-eyebrow reveal" data-i18n="portfolio.label">Portfólio</span>
+        <h2 class="section-title reveal reveal-d1" data-i18n="portfolio.title">Trabalhos recentes.</h2>
+
+        <!-- Tab buttons -->
+        <div class="tabs reveal reveal-d2" role="tablist" aria-label="Categorias de portfólio">
+          <button class="tab-btn active" role="tab" data-tab="longform"
+                  aria-selected="true" aria-controls="panel-longform" id="tab-lf"
+                  data-i18n="portfolio.tab.longform">Long-form</button>
+          <button class="tab-btn" role="tab" data-tab="shorts"
+                  aria-selected="false" aria-controls="panel-shorts" id="tab-sh"
+                  data-i18n="portfolio.tab.shorts">Shorts &amp; Reels</button>
+        </div>
+
+        <!-- Long-form panel -->
+        <div class="tab-panel active" id="panel-longform" role="tabpanel" aria-labelledby="tab-lf">
+          <div class="projects-grid">
+
+            <article class="project-card reveal reveal-d1">
+              <div class="thumb thumb-lf1">
+                <div class="thumb-overlay">
+                  <div class="play-btn" aria-label="Reproduzir vídeo">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18a1 1 0 000-1.69L9.54 5.98C8.87 5.55 8 6.03 8 6.82z"/></svg>
+                  </div>
+                </div>
+                <span class="thumb-tag" data-i18n="portfolio.lf1.category">Long-form · Podcast</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title" data-i18n="portfolio.lf1.title">Podcast Visual — Episódio 01</h3>
+                <p class="project-desc" data-i18n="portfolio.lf1.desc">Edição completa com motion graphics integrado, tratamento de cores e design sonoro.</p>
+                <a href="#" class="btn btn-ghost btn-sm">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13" aria-hidden="true"><path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18a1 1 0 000-1.69L9.54 5.98C8.87 5.55 8 6.03 8 6.82z"/></svg>
+                  <span data-i18n="portfolio.watch">Assistir</span>
+                </a>
+              </div>
+            </article>
+
+            <article class="project-card reveal reveal-d2">
+              <div class="thumb thumb-lf2">
+                <div class="thumb-overlay">
+                  <div class="play-btn" aria-label="Reproduzir vídeo">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18a1 1 0 000-1.69L9.54 5.98C8.87 5.55 8 6.03 8 6.82z"/></svg>
+                  </div>
+                </div>
+                <span class="thumb-tag" data-i18n="portfolio.lf2.category">Long-form · Documentário</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title" data-i18n="portfolio.lf2.title">Documentário: Processo Criativo</h3>
+                <p class="project-desc" data-i18n="portfolio.lf2.desc">Narrativa visual construída com arquivo de imagens, entrevistas e trilha original.</p>
+                <a href="#" class="btn btn-ghost btn-sm">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13" aria-hidden="true"><path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18a1 1 0 000-1.69L9.54 5.98C8.87 5.55 8 6.03 8 6.82z"/></svg>
+                  <span data-i18n="portfolio.watch">Assistir</span>
+                </a>
+              </div>
+            </article>
+
+            <article class="project-card reveal reveal-d3">
+              <div class="thumb thumb-lf3">
+                <div class="thumb-overlay">
+                  <div class="play-btn" aria-label="Reproduzir vídeo">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18a1 1 0 000-1.69L9.54 5.98C8.87 5.55 8 6.03 8 6.82z"/></svg>
+                  </div>
+                </div>
+                <span class="thumb-tag" data-i18n="portfolio.lf3.category">Long-form · Vlog</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title" data-i18n="portfolio.lf3.title">Vlog de Lifestyle</h3>
+                <p class="project-desc" data-i18n="portfolio.lf3.desc">Edição dinâmica com pacing ajustado para manter engajamento ao longo de todo o conteúdo.</p>
+                <a href="#" class="btn btn-ghost btn-sm">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13" aria-hidden="true"><path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18a1 1 0 000-1.69L9.54 5.98C8.87 5.55 8 6.03 8 6.82z"/></svg>
+                  <span data-i18n="portfolio.watch">Assistir</span>
+                </a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- Shorts panel -->
+        <div class="tab-panel" id="panel-shorts" role="tabpanel" aria-labelledby="tab-sh">
+          <div class="projects-grid projects-grid-shorts">
+
+            <article class="project-card project-card-short reveal reveal-d1">
+              <div class="thumb thumb-short thumb-s1">
+                <div class="thumb-overlay">
+                  <div class="play-btn" aria-label="Reproduzir vídeo">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18a1 1 0 000-1.69L9.54 5.98C8.87 5.55 8 6.03 8 6.82z"/></svg>
+                  </div>
+                </div>
+                <span class="thumb-tag" data-i18n="portfolio.s1.category">Short-form · Reel</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title" data-i18n="portfolio.s1.title">Reel de Produto</h3>
+                <p class="project-desc" data-i18n="portfolio.s1.desc">30 segundos com cortes rítmicos, motion e call to action eficiente.</p>
+                <a href="#" class="btn btn-ghost btn-sm">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13" aria-hidden="true"><path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18a1 1 0 000-1.69L9.54 5.98C8.87 5.55 8 6.03 8 6.82z"/></svg>
+                  <span data-i18n="portfolio.watch">Assistir</span>
+                </a>
+              </div>
+            </article>
+
+            <article class="project-card project-card-short reveal reveal-d2">
+              <div class="thumb thumb-short thumb-s2">
+                <div class="thumb-overlay">
+                  <div class="play-btn" aria-label="Reproduzir vídeo">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18a1 1 0 000-1.69L9.54 5.98C8.87 5.55 8 6.03 8 6.82z"/></svg>
+                  </div>
+                </div>
+                <span class="thumb-tag" data-i18n="portfolio.s2.category">Short-form · TikTok</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title" data-i18n="portfolio.s2.title">TikTok de Review</h3>
+                <p class="project-desc" data-i18n="portfolio.s2.desc">Edição rápida com legenda estilizada e ritmo ajustado para retenção máxima.</p>
+                <a href="#" class="btn btn-ghost btn-sm">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13" aria-hidden="true"><path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18a1 1 0 000-1.69L9.54 5.98C8.87 5.55 8 6.03 8 6.82z"/></svg>
+                  <span data-i18n="portfolio.watch">Assistir</span>
+                </a>
+              </div>
+            </article>
+
+            <article class="project-card project-card-short reveal reveal-d3">
+              <div class="thumb thumb-short thumb-s3">
+                <div class="thumb-overlay">
+                  <div class="play-btn" aria-label="Reproduzir vídeo">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18a1 1 0 000-1.69L9.54 5.98C8.87 5.55 8 6.03 8 6.82z"/></svg>
+                  </div>
+                </div>
+                <span class="thumb-tag" data-i18n="portfolio.s3.category">Short-form · YouTube Shorts</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title" data-i18n="portfolio.s3.title">Short Motivacional</h3>
+                <p class="project-desc" data-i18n="portfolio.s3.desc">Storytelling condensado em menos de 60 segundos com impacto emocional real.</p>
+                <a href="#" class="btn btn-ghost btn-sm">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13" aria-hidden="true"><path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18a1 1 0 000-1.69L9.54 5.98C8.87 5.55 8 6.03 8 6.82z"/></svg>
+                  <span data-i18n="portfolio.watch">Assistir</span>
+                </a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ====================================================
+         PROCESSO
+    ===================================================== -->
+    <section class="section section-alt" id="processo" aria-label="Processo de trabalho">
+      <div class="container">
+
+        <span class="section-eyebrow reveal" data-i18n="processo.label">Processo</span>
+        <h2 class="section-title reveal reveal-d1" data-i18n="processo.title">Como trabalhamos juntos.</h2>
+
+        <div class="process-track" aria-hidden="true"><div class="process-track-line"></div></div>
+
+        <div class="process-steps">
+
+          <div class="process-step reveal reveal-d1">
+            <div class="step-marker">
+              <span class="step-num" aria-hidden="true">01</span>
+            </div>
+            <div class="step-body">
+              <h3 class="step-name" data-i18n="processo.step1.title">Briefing</h3>
+              <p class="step-desc" data-i18n="processo.step1.desc">Entendo o projeto, o público, o objetivo e o que você espera da edição. Aqui evito suposições.</p>
+            </div>
+          </div>
+
+          <div class="process-step reveal reveal-d2">
+            <div class="step-marker">
+              <span class="step-num" aria-hidden="true">02</span>
+            </div>
+            <div class="step-body">
+              <h3 class="step-name" data-i18n="processo.step2.title">Edição</h3>
+              <p class="step-desc" data-i18n="processo.step2.desc">Começo a construção visual com base no que foi alinhado. Estrutura, pacing, motion e áudio — tudo integrado.</p>
+            </div>
+          </div>
+
+          <div class="process-step reveal reveal-d3">
+            <div class="step-marker">
+              <span class="step-num" aria-hidden="true">03</span>
+            </div>
+            <div class="step-body">
+              <h3 class="step-name" data-i18n="processo.step3.title">Revisões</h3>
+              <p class="step-desc" data-i18n="processo.step3.desc">Apresento o primeiro cut e abrimos rodadas de ajuste. Comunicação clara, feedback organizado.</p>
+            </div>
+          </div>
+
+          <div class="process-step reveal reveal-d4">
+            <div class="step-marker">
+              <span class="step-num" aria-hidden="true">04</span>
+            </div>
+            <div class="step-body">
+              <h3 class="step-name" data-i18n="processo.step4.title">Entrega</h3>
+              <p class="step-desc" data-i18n="processo.step4.desc">Arquivo final nas especificações corretas para cada plataforma. Entrega no prazo combinado.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================
+         CONTATO
+    ===================================================== -->
+    <section class="section" id="contato" aria-label="Contato">
+      <div class="container">
+
+        <div class="contact-header">
+          <span class="section-eyebrow reveal" data-i18n="contato.label">Contato</span>
+          <h2 class="section-title reveal reveal-d1" data-i18n="contato.title">Vamos trabalhar juntos.</h2>
+          <p class="contact-sub reveal reveal-d2" data-i18n="contato.subtitle">Escolha como prefere se conectar.</p>
+        </div>
+
+        <div class="contact-list">
+
+          <a href="https://discord.com/users/davik" class="contact-card reveal reveal-d1"
+             target="_blank" rel="noopener noreferrer" aria-label="Entrar em contato pelo Discord">
+            <div class="contact-icon icon-discord" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.317 4.492c-1.53-.69-3.17-1.2-4.885-1.49a.075.075 0 00-.079.036c-.21.369-.444.85-.608 1.23a18.566 18.566 0 00-5.487 0 12.36 12.36 0 00-.617-1.23.077.077 0 00-.079-.036c-1.715.29-3.355.8-4.885 1.491a.07.07 0 00-.032.027C.533 9.093-.32 13.555.099 17.961a.08.08 0 00.031.055 20.03 20.03 0 005.993 2.98.078.078 0 00.084-.026 13.83 13.83 0 001.226-1.963.074.074 0 00-.041-.104 13.175 13.175 0 01-1.872-.878.075.075 0 01-.008-.125c.126-.093.252-.19.372-.287a.075.075 0 01.078-.01c3.927 1.764 8.18 1.764 12.061 0a.075.075 0 01.079.009c.12.098.245.195.372.288a.075.075 0 01-.006.125c-.598.344-1.22.635-1.873.877a.075.075 0 00-.041.105c.36.687.772 1.341 1.225 1.962a.077.077 0 00.084.028 19.963 19.963 0 006.002-2.981.076.076 0 00.032-.054c.5-5.094-.838-9.52-3.549-13.442a.06.06 0 00-.031-.028zM8.02 15.278c-1.182 0-2.157-1.069-2.157-2.38 0-1.312.956-2.38 2.157-2.38 1.21 0 2.176 1.077 2.157 2.38 0 1.312-.956 2.38-2.157 2.38zm7.975 0c-1.183 0-2.157-1.069-2.157-2.38 0-1.312.955-2.38 2.157-2.38 1.21 0 2.176 1.077 2.157 2.38 0 1.312-.946 2.38-2.157 2.38z"/>
+              </svg>
+            </div>
+            <div class="contact-info">
+              <span class="contact-platform" data-i18n="contato.discord.label">Discord</span>
+              <span class="contact-handle" data-i18n="contato.discord.handle">davik</span>
+            </div>
+            <div class="contact-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </a>
+
+          <a href="mailto:davik@email.com" class="contact-card reveal reveal-d2"
+             aria-label="Enviar e-mail para Davik">
+            <div class="contact-icon icon-email" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2.5"/>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/>
+              </svg>
+            </div>
+            <div class="contact-info">
+              <span class="contact-platform" data-i18n="contato.email.label">E-mail</span>
+              <span class="contact-handle" data-i18n="contato.email.handle">davik@email.com</span>
+            </div>
+            <div class="contact-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </a>
+
+          <a href="https://x.com/davik" class="contact-card reveal reveal-d3"
+             target="_blank" rel="noopener noreferrer" aria-label="Acessar perfil no X (Twitter)">
+            <div class="contact-icon icon-x" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </div>
+            <div class="contact-info">
+              <span class="contact-platform" data-i18n="contato.x.label">X / Twitter</span>
+              <span class="contact-handle" data-i18n="contato.x.handle">@davik</span>
+            </div>
+            <div class="contact-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ====================================================
+       FOOTER
+  ===================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-brand">Davik.</span>
+        <span class="footer-tagline" data-i18n="footer.tagline">Feito com atenção aos detalhes.</span>
+        <span class="footer-copy" data-i18n="footer.copy">© 2025 Davik. Todos os direitos reservados.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

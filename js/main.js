@@ -210,11 +210,11 @@ const i18n = {
     'contato.subtitle': 'Choose how you prefer to connect.',
 
     'contato.discord.label':  'Discord',
-    'contato.discord.handle': 'davik',
+    'contato.discord.handle': 'baiaak.',
     'contato.email.label':    'Email',
     'contato.email.handle':   'davik@email.com',
     'contato.x.label':        'X / Twitter',
-    'contato.x.handle':       '@davik',
+    'contato.x.handle':       'https://x.com/DvFerrz',
 
     /* Footer */
     'footer.tagline': 'Made with attention to detail.',

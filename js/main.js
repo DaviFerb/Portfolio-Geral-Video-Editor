@@ -107,11 +107,11 @@ const i18n = {
     'contato.subtitle': 'Escolha como prefere se conectar.',
 
     'contato.discord.label':  'Discord',
-    'contato.discord.handle': 'davik',
+    'contato.discord.handle': 'baiaak',
     'contato.email.label':    'E-mail',
     'contato.email.handle':   'davik@email.com',
     'contato.x.label':        'X / Twitter',
-    'contato.x.handle':       '@davik',
+    'contato.x.handle':       'https://x.com/DvFerrz',
 
     /* Footer */
     'footer.tagline': 'Feito com atenção aos detalhes.',

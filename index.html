@@ -353,9 +353,13 @@ img { display: block; max-width: 100%; }
   border: 1.5px solid rgba(255,255,255,.6);
   flex-shrink: 0;
   overflow: hidden;
-  background: #333;
+  background: #555;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.65rem; font-weight: 700; color: #fff;
 }
-.yt-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.yt-avatar::before { content: 'D'; }
+.yt-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; position: absolute; inset: 0; }
+.yt-avatar:has(img)::before { display: none; }
 .yt-meta {
   flex: 1; min-width: 0;
   display: flex; flex-direction: column; gap: 0.08rem;
@@ -474,7 +478,7 @@ img { display: block; max-width: 100%; }
           <div class="yt-short" data-videoid="PEAThTZ3hzI">
             <img src="https://i.ytimg.com/vi/PEAThTZ3hzI/hqdefault.jpg" alt="Live Clip 1 – Bahiaqz" class="yt-thumb">
             <div class="yt-header">
-              <div class="yt-avatar"><img src="https://yt3.googleusercontent.com/ytc/AIdro_k7mYqOYWDj7xCEGJD8q5KaZt5E7bHV5zMeMg=s68-c-k-c0x00ffffff-no-rj" alt="Davik"></div>
+              <div class="yt-avatar"></div>
               <div class="yt-meta">
                 <span class="yt-vtitle">Live Clip 1 – Bahiaqz</span>
                 <span class="yt-vch">Davik</span>
@@ -495,7 +499,7 @@ img { display: block; max-width: 100%; }
           <div class="yt-short" data-videoid="nORNtKV77hw">
             <img src="https://i.ytimg.com/vi/nORNtKV77hw/hqdefault.jpg" alt="Short 2" class="yt-thumb">
             <div class="yt-header">
-              <div class="yt-avatar"><img src="https://yt3.googleusercontent.com/ytc/AIdro_k7mYqOYWDj7xCEGJD8q5KaZt5E7bHV5zMeMg=s68-c-k-c0x00ffffff-no-rj" alt="Davik"></div>
+              <div class="yt-avatar"></div>
               <div class="yt-meta">
                 <span class="yt-vtitle">Short 2</span>
                 <span class="yt-vch">Davik</span>
@@ -516,7 +520,7 @@ img { display: block; max-width: 100%; }
           <div class="yt-short" data-videoid="utWRvQ7wJwM">
             <img src="https://i.ytimg.com/vi/utWRvQ7wJwM/hqdefault.jpg" alt="Short 3" class="yt-thumb">
             <div class="yt-header">
-              <div class="yt-avatar"><img src="https://yt3.googleusercontent.com/ytc/AIdro_k7mYqOYWDj7xCEGJD8q5KaZt5E7bHV5zMeMg=s68-c-k-c0x00ffffff-no-rj" alt="Davik"></div>
+              <div class="yt-avatar"></div>
               <div class="yt-meta">
                 <span class="yt-vtitle">Short 3</span>
                 <span class="yt-vch">Davik</span>
@@ -731,17 +735,37 @@ function detectLang() {
 /* ─── Public toggle ─── */
 window.setLang = function(lang) { applyLang(lang); };
 
-/* ─── YouTube Shorts — títulos reais via oEmbed ─── */
+/* ─── YouTube Shorts — títulos reais + avatar do canal via oEmbed ─── */
 (function() {
-  ['PEAThTZ3hzI','nORNtKV77hw','utWRvQ7wJwM'].forEach(function(id) {
+  var ids = ['PEAThTZ3hzI','nORNtKV77hw','utWRvQ7wJwM'];
+
+  /* Buscar títulos */
+  ids.forEach(function(id) {
     fetch('https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=' + id + '&format=json')
       .then(function(r){ return r.json(); })
       .then(function(d){
-        if (!d || !d.title) return;
+        if (!d) return;
+        /* Título */
         var el = document.querySelector('.yt-short[data-videoid="' + id + '"]');
-        if (!el) return;
-        var t = el.querySelector('.yt-vtitle');
-        if (t) t.textContent = d.title;
+        if (el) {
+          var t = el.querySelector('.yt-vtitle');
+          if (t && d.title) t.textContent = d.title;
+        }
+        /* Avatar — só precisa fazer uma vez */
+        if (id === ids[0] && d.author_url) {
+          fetch('https://corsproxy.io/?' + encodeURIComponent(d.author_url))
+            .then(function(r){ return r.text(); })
+            .then(function(html){
+              var m = html.match(/"avatar":\{"thumbnails":\[{"url":"([^"]+)"/);
+              if (!m) m = html.match(/og:image[^>]+content="([^"]+)"/);
+              if (!m) return;
+              var avatarUrl = m[1].replace(/\\u0026/g,'&');
+              document.querySelectorAll('.yt-avatar').forEach(function(a){
+                a.innerHTML = '<img src="' + avatarUrl + '" alt="Davik">';
+              });
+            })
+            .catch(function(){});
+        }
       })
       .catch(function(){});
   });

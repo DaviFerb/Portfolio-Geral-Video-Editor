@@ -224,7 +224,7 @@ img { display: block; max-width: 100%; }
 .thumb:hover .t-bg   { transform: scale(1.05); }
 .thumb:hover .t-ov   { background: rgba(0,0,0,.18); }
 .thumb:hover .t-play { opacity: 1; transform: scale(1); }
-.pmeta { display: flex; align-items: center; justify-content: space-between; gap: .75rem; }
+.pmeta { display: none; }
 .pname { font-size: .84rem; font-weight: 400; color: var(--ink); }
 .pwatch { font-size: .74rem; font-weight: 400; color: var(--muted); flex-shrink: 0; transition: color var(--t); }
 .pwatch:hover { color: var(--accent); }
@@ -383,6 +383,50 @@ img { display: block; max-width: 100%; }
   border: none;
   display: block;
 }
+
+/* Shorts card header overlay */
+.yt-header {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  padding: 0.85rem 0.8rem 2.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  background: linear-gradient(to bottom, rgba(0,0,0,.78) 0%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+.yt-avatar {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,.55);
+  flex-shrink: 0;
+  overflow: hidden;
+  background: #333;
+}
+.yt-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.yt-meta {
+  flex: 1; min-width: 0;
+  display: flex; flex-direction: column; gap: 0.1rem;
+}
+.yt-vtitle {
+  font-size: 0.75rem; font-weight: 600; color: #fff;
+  line-height: 1.25;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.yt-vch {
+  font-size: 0.62rem; font-weight: 400;
+  color: rgba(255,255,255,.72);
+}
+.yt-sl-icon {
+  width: 18px; height: 18px;
+  flex-shrink: 0; margin-top: 2px;
+  border-radius: 4px;
+}
+
 </style>
 </head>
 <body>
@@ -478,6 +522,14 @@ img { display: block; max-width: 100%; }
         <article class="pcard">
           <div class="yt-short" data-videoid="PEAThTZ3hzI">
             <img src="https://i.ytimg.com/vi/PEAThTZ3hzI/hqdefault.jpg" alt="Live Clip 1 – Bahiaqz" class="yt-thumb">
+            <div class="yt-header">
+              <div class="yt-avatar"><img src="https://yt3.googleusercontent.com/ytc/AIdro_k7mYqOYWDj7xCEGJD8q5KaZt5E7bHV5zMeMg=s68-c-k-c0x00ffffff-no-rj" alt="Davik"></div>
+              <div class="yt-meta">
+                <span class="yt-vtitle">Live Clip 1 – Bahiaqz</span>
+                <span class="yt-vch">Davik</span>
+              </div>
+              <svg class="yt-sl-icon" viewBox="0 0 90 90" fill="none"><rect width="90" height="90" rx="20" fill="#FF0000"/><path d="M62 45L35 62V28L62 45Z" fill="white"/></svg>
+            </div>
             <div class="yt-play-btn" aria-label="Play">
               <svg viewBox="0 0 68 48" fill="none"><rect width="68" height="48" rx="10" fill="#FF0000"/><polygon points="27,14 27,34 47,24" fill="#fff"/></svg>
             </div>
@@ -491,6 +543,14 @@ img { display: block; max-width: 100%; }
         <article class="pcard">
           <div class="yt-short" data-videoid="nORNtKV77hw">
             <img src="https://i.ytimg.com/vi/nORNtKV77hw/hqdefault.jpg" alt="Short 2" class="yt-thumb">
+            <div class="yt-header">
+              <div class="yt-avatar"><img src="https://yt3.googleusercontent.com/ytc/AIdro_k7mYqOYWDj7xCEGJD8q5KaZt5E7bHV5zMeMg=s68-c-k-c0x00ffffff-no-rj" alt="Davik"></div>
+              <div class="yt-meta">
+                <span class="yt-vtitle">Short 2</span>
+                <span class="yt-vch">Davik</span>
+              </div>
+              <svg class="yt-sl-icon" viewBox="0 0 90 90" fill="none"><rect width="90" height="90" rx="20" fill="#FF0000"/><path d="M62 45L35 62V28L62 45Z" fill="white"/></svg>
+            </div>
             <div class="yt-play-btn" aria-label="Play">
               <svg viewBox="0 0 68 48" fill="none"><rect width="68" height="48" rx="10" fill="#FF0000"/><polygon points="27,14 27,34 47,24" fill="#fff"/></svg>
             </div>
@@ -504,6 +564,14 @@ img { display: block; max-width: 100%; }
         <article class="pcard">
           <div class="yt-short" data-videoid="YcHFAbW4pGI">
             <img src="https://i.ytimg.com/vi/YcHFAbW4pGI/hqdefault.jpg" alt="Short 3" class="yt-thumb">
+            <div class="yt-header">
+              <div class="yt-avatar"><img src="https://yt3.googleusercontent.com/ytc/AIdro_k7mYqOYWDj7xCEGJD8q5KaZt5E7bHV5zMeMg=s68-c-k-c0x00ffffff-no-rj" alt="Davik"></div>
+              <div class="yt-meta">
+                <span class="yt-vtitle">Short 3</span>
+                <span class="yt-vch">Davik</span>
+              </div>
+              <svg class="yt-sl-icon" viewBox="0 0 90 90" fill="none"><rect width="90" height="90" rx="20" fill="#FF0000"/><path d="M62 45L35 62V28L62 45Z" fill="white"/></svg>
+            </div>
             <div class="yt-play-btn" aria-label="Play">
               <svg viewBox="0 0 68 48" fill="none"><rect width="68" height="48" rx="10" fill="#FF0000"/><polygon points="27,14 27,34 47,24" fill="#fff"/></svg>
             </div>
@@ -711,6 +779,24 @@ function detectLang() {
 
 /* ─── Public toggle ─── */
 window.setLang = function(lang) { applyLang(lang); };
+
+/* ─── YouTube Shorts — títulos reais via oEmbed ─── */
+(function() {
+  ['PEAThTZ3hzI','nORNtKV77hw','YcHFAbW4pGI'].forEach(function(id) {
+    fetch('https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=' + id + '&format=json')
+      .then(function(r){ return r.json(); })
+      .then(function(d){
+        if (!d || !d.title) return;
+        var el = document.querySelector('.yt-short[data-videoid="' + id + '"]');
+        if (!el) return;
+        var t = el.querySelector('.yt-vtitle');
+        if (t) t.textContent = d.title;
+        var card = el.closest('.pcard');
+        if (card) { var p = card.querySelector('.pname'); if (p) p.textContent = d.title; }
+      })
+      .catch(function(){});
+  });
+})();
 
 /* ─── YouTube Shorts — Modal Player ─── */
 (function() {

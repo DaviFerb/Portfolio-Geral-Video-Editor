@@ -154,7 +154,7 @@ img { display: block; max-width: 100%; }
 }
 
 .pgrid { display: grid; gap: 1.5rem; }
-.wide  { grid-template-columns: repeat(3,1fr); }
+.wide  { grid-template-columns: repeat(2,1fr); }
 .short { grid-template-columns: repeat(3,1fr); }
 .pcard { display: flex; flex-direction: column; gap: .85rem; }
 
@@ -312,7 +312,6 @@ img { display: block; max-width: 100%; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
-  .wide  { grid-template-columns: repeat(2,1fr); }
   .short { grid-template-columns: repeat(2,1fr); }
 }
 @media (max-width: 780px) {
@@ -335,7 +334,41 @@ img { display: block; max-width: 100%; }
   .fade-up  { opacity: 1; transform: none; transition: none; }
   .thumb:hover .t-bg { transform: none; }
 }
-/* Shorts card header overlay */
+/* Long-form player card */
+.yt-long {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--r);
+  overflow: hidden;
+  background: #111;
+  cursor: pointer;
+}
+.yt-long .yt-thumb {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform var(--ts), filter .3s ease;
+}
+.yt-long .yt-play-btn {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(0,0,0,.15);
+  transition: background .3s ease;
+}
+.yt-long .yt-play-btn svg {
+  width: 64px; height: auto;
+  filter: drop-shadow(0 2px 12px rgba(0,0,0,.4));
+  transition: transform .25s ease;
+}
+.yt-long:hover .yt-thumb     { transform: scale(1.04); filter: brightness(.82); }
+.yt-long:hover .yt-play-btn  { background: rgba(0,0,0,.28); }
+.yt-long:hover .yt-play-btn svg { transform: scale(1.1); }
+.yt-long iframe {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; border: none;
+}
+
+
 .yt-header {
   position: absolute;
   top: 0; left: 0; right: 0;
@@ -435,35 +468,70 @@ img { display: block; max-width: 100%; }
       <div class="pgrid wide">
 
         <article class="pcard">
-          <a href="#" class="thumb thumb-w" target="_blank" rel="noopener">
-            <div class="t-bg" style="background:linear-gradient(145deg,#b4c9da,#85abc2)"></div>
-            <div class="t-ov"><div class="t-play"><svg viewBox="0 0 20 20" fill="currentColor"><polygon points="4,2 18,10 4,18"/></svg></div></div>
-          </a>
-          <div class="pmeta">
-            <h3 class="pname">Documentary Short</h3>
-            <a href="#" class="pwatch" target="_blank" rel="noopener" data-i18n="watch">Assistir →</a>
+          <div class="yt-long" data-videoid="P99JEwAUtB8">
+            <img src="https://i.ytimg.com/vi/P99JEwAUtB8/maxresdefault.jpg" onerror="this.src='https://i.ytimg.com/vi/P99JEwAUtB8/hqdefault.jpg'" alt="" class="yt-thumb">
+            <div class="yt-header">
+              <div class="yt-avatar"></div>
+              <div class="yt-meta">
+                <span class="yt-vtitle">Carregando...</span>
+                <span class="yt-vch">Davik</span>
+              </div>
+              <svg class="yt-sl-icon" viewBox="0 0 90 90" fill="none"><rect width="90" height="90" rx="20" fill="#FF0000"/><path d="M62 45L35 62V28L62 45Z" fill="white"/></svg>
+            </div>
+            <div class="yt-play-btn" aria-label="Play">
+              <svg viewBox="0 0 68 48" fill="none"><rect width="68" height="48" rx="10" fill="#FF0000"/><polygon points="27,14 27,34 47,24" fill="#fff"/></svg>
+            </div>
           </div>
         </article>
 
         <article class="pcard">
-          <a href="#" class="thumb thumb-w" target="_blank" rel="noopener">
-            <div class="t-bg" style="background:linear-gradient(145deg,#c0b8da,#9890c2)"></div>
-            <div class="t-ov"><div class="t-play"><svg viewBox="0 0 20 20" fill="currentColor"><polygon points="4,2 18,10 4,18"/></svg></div></div>
-          </a>
-          <div class="pmeta">
-            <h3 class="pname">Brand Story Film</h3>
-            <a href="#" class="pwatch" target="_blank" rel="noopener" data-i18n="watch">Assistir →</a>
+          <div class="yt-long" data-videoid="tp71DJetuCc">
+            <img src="https://i.ytimg.com/vi/tp71DJetuCc/maxresdefault.jpg" onerror="this.src='https://i.ytimg.com/vi/tp71DJetuCc/hqdefault.jpg'" alt="" class="yt-thumb">
+            <div class="yt-header">
+              <div class="yt-avatar"></div>
+              <div class="yt-meta">
+                <span class="yt-vtitle">Carregando...</span>
+                <span class="yt-vch">Davik</span>
+              </div>
+              <svg class="yt-sl-icon" viewBox="0 0 90 90" fill="none"><rect width="90" height="90" rx="20" fill="#FF0000"/><path d="M62 45L35 62V28L62 45Z" fill="white"/></svg>
+            </div>
+            <div class="yt-play-btn" aria-label="Play">
+              <svg viewBox="0 0 68 48" fill="none"><rect width="68" height="48" rx="10" fill="#FF0000"/><polygon points="27,14 27,34 47,24" fill="#fff"/></svg>
+            </div>
           </div>
         </article>
 
         <article class="pcard">
-          <a href="#" class="thumb thumb-w" target="_blank" rel="noopener">
-            <div class="t-bg" style="background:linear-gradient(145deg,#adccc2,#82b0a4)"></div>
-            <div class="t-ov"><div class="t-play"><svg viewBox="0 0 20 20" fill="currentColor"><polygon points="4,2 18,10 4,18"/></svg></div></div>
-          </a>
-          <div class="pmeta">
-            <h3 class="pname">Tutorial Series</h3>
-            <a href="#" class="pwatch" target="_blank" rel="noopener" data-i18n="watch">Assistir →</a>
+          <div class="yt-long" data-videoid="vo8_Xzcc-rc">
+            <img src="https://i.ytimg.com/vi/vo8_Xzcc-rc/maxresdefault.jpg" onerror="this.src='https://i.ytimg.com/vi/vo8_Xzcc-rc/hqdefault.jpg'" alt="" class="yt-thumb">
+            <div class="yt-header">
+              <div class="yt-avatar"></div>
+              <div class="yt-meta">
+                <span class="yt-vtitle">Carregando...</span>
+                <span class="yt-vch">Davik</span>
+              </div>
+              <svg class="yt-sl-icon" viewBox="0 0 90 90" fill="none"><rect width="90" height="90" rx="20" fill="#FF0000"/><path d="M62 45L35 62V28L62 45Z" fill="white"/></svg>
+            </div>
+            <div class="yt-play-btn" aria-label="Play">
+              <svg viewBox="0 0 68 48" fill="none"><rect width="68" height="48" rx="10" fill="#FF0000"/><polygon points="27,14 27,34 47,24" fill="#fff"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article class="pcard">
+          <div class="yt-long" data-videoid="7GbjIOXxCNc">
+            <img src="https://i.ytimg.com/vi/7GbjIOXxCNc/maxresdefault.jpg" onerror="this.src='https://i.ytimg.com/vi/7GbjIOXxCNc/hqdefault.jpg'" alt="" class="yt-thumb">
+            <div class="yt-header">
+              <div class="yt-avatar"></div>
+              <div class="yt-meta">
+                <span class="yt-vtitle">Carregando...</span>
+                <span class="yt-vch">Davik</span>
+              </div>
+              <svg class="yt-sl-icon" viewBox="0 0 90 90" fill="none"><rect width="90" height="90" rx="20" fill="#FF0000"/><path d="M62 45L35 62V28L62 45Z" fill="white"/></svg>
+            </div>
+            <div class="yt-play-btn" aria-label="Play">
+              <svg viewBox="0 0 68 48" fill="none"><rect width="68" height="48" rx="10" fill="#FF0000"/><polygon points="27,14 27,34 47,24" fill="#fff"/></svg>
+            </div>
           </div>
         </article>
 
@@ -583,7 +651,7 @@ img { display: block; max-width: 100%; }
 
       <div class="c-grid">
 
-        <a href="https://discord.com/users/baiaak" class="c-card" target="_blank" rel="noopener">
+        <div class="c-card">
           <span class="c-card-icon icon-discord" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
           </span>
@@ -591,8 +659,7 @@ img { display: block; max-width: 100%; }
             <p class="c-platform">Discord</p>
             <p class="c-handle">baiaak.</p>
           </div>
-          <span class="c-card-arrow" aria-hidden="true">→</span>
-        </a>
+        </div>
 
         <a href="https://x.com/DvFerrz3" class="c-card" target="_blank" rel="noopener">
           <span class="c-card-icon icon-x" aria-hidden="true">
@@ -735,43 +802,56 @@ function detectLang() {
 /* ─── Public toggle ─── */
 window.setLang = function(lang) { applyLang(lang); };
 
-/* ─── YouTube Shorts — títulos reais + avatar do canal via oEmbed ─── */
+/* ─── Títulos reais via oEmbed (todos) + avatar + inline play ─── */
 (function() {
-  var ids = ['PEAThTZ3hzI','nORNtKV77hw','utWRvQ7wJwM'];
+  var all = [
+    'P99JEwAUtB8','tp71DJetuCc','vo8_Xzcc-rc','7GbjIOXxCNc',
+    'PEAThTZ3hzI','nORNtKV77hw','utWRvQ7wJwM'
+  ];
+  var avatarDone = false;
 
-  /* Buscar títulos */
-  ids.forEach(function(id) {
+  all.forEach(function(id) {
     fetch('https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=' + id + '&format=json')
       .then(function(r){ return r.json(); })
       .then(function(d){
         if (!d) return;
-        /* Título */
-        var el = document.querySelector('.yt-short[data-videoid="' + id + '"]');
+        var el = document.querySelector('[data-videoid="' + id + '"]');
         if (el) {
           var t = el.querySelector('.yt-vtitle');
           if (t && d.title) t.textContent = d.title;
         }
-        /* Avatar — só precisa fazer uma vez */
-        if (id === ids[0] && d.author_url) {
+        if (!avatarDone && d.author_url) {
+          avatarDone = true;
           fetch('https://corsproxy.io/?' + encodeURIComponent(d.author_url))
             .then(function(r){ return r.text(); })
             .then(function(html){
-              var m = html.match(/"avatar":\{"thumbnails":\[{"url":"([^"]+)"/);
-              if (!m) m = html.match(/og:image[^>]+content="([^"]+)"/);
+              var m = html.match(/"avatar":{"thumbnails":\[{"url":"([^"]+)"/) ||
+                      html.match(/og:image[^>]+content="([^"]+)"/);
               if (!m) return;
-              var avatarUrl = m[1].replace(/\\u0026/g,'&');
+              var url = m[1].replace(/\\u0026/g,'&');
               document.querySelectorAll('.yt-avatar').forEach(function(a){
-                a.innerHTML = '<img src="' + avatarUrl + '" alt="Davik">';
+                a.innerHTML = '<img src="' + url + '" alt="Davik">';
               });
-            })
-            .catch(function(){});
+            }).catch(function(){});
         }
-      })
-      .catch(function(){});
+      }).catch(function(){});
   });
 })();
 
-/* ─── YouTube Shorts — inline play ao clicar ─── */
+/* ─── Inline play — Long-form ─── */
+document.querySelectorAll('.yt-long[data-videoid]').forEach(function(el) {
+  el.addEventListener('click', function() {
+    var id = el.getAttribute('data-videoid');
+    el.innerHTML =
+      '<iframe src="https://www.youtube-nocookie.com/embed/' + id +
+      '?autoplay=1&rel=0&modestbranding=1&controls=1"' +
+      ' allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"' +
+      ' allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:none;"></iframe>';
+    el.style.cursor = 'default';
+  });
+});
+
+/* ─── Inline play — Shorts ─── */
 document.querySelectorAll('.yt-short[data-videoid]').forEach(function(el) {
   el.addEventListener('click', function() {
     var id = el.getAttribute('data-videoid');

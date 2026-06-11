@@ -158,41 +158,7 @@ img { display: block; max-width: 100%; }
 .short { grid-template-columns: repeat(3,1fr); }
 .pcard { display: flex; flex-direction: column; gap: .85rem; }
 
-/* YouTube Shorts — thumbnail + play */
-.yt-short {
-  position: relative;
-  aspect-ratio: 9 / 16;
-  border-radius: var(--r);
-  overflow: hidden;
-  background: #111;
-  cursor: pointer;
-}
-.yt-thumb {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform var(--ts), filter .3s ease;
-}
-.yt-play-btn {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0,0,0,.18);
-  transition: background .3s ease;
-}
-.yt-play-btn svg {
-  width: 56px;
-  height: auto;
-  filter: drop-shadow(0 2px 12px rgba(0,0,0,.4));
-  transition: transform .25s ease;
-}
-.yt-short:hover .yt-thumb     { transform: scale(1.04); filter: brightness(.85); }
-.yt-short:hover .yt-play-btn  { background: rgba(0,0,0,.28); }
-.yt-short:hover .yt-play-btn svg { transform: scale(1.1); }
+
 .yt-short iframe {
   position: absolute;
   inset: 0;
@@ -334,39 +300,7 @@ img { display: block; max-width: 100%; }
   .fade-up  { opacity: 1; transform: none; transition: none; }
   .thumb:hover .t-bg { transform: none; }
 }
-/* Long-form player card */
-.yt-long {
-  position: relative;
-  aspect-ratio: 16 / 9;
-  border-radius: var(--r);
-  overflow: hidden;
-  background: #111;
-  cursor: pointer;
-}
-.yt-long .yt-thumb {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%;
-  object-fit: cover;
-  transition: transform var(--ts), filter .3s ease;
-}
-.yt-long .yt-play-btn {
-  position: absolute; inset: 0;
-  display: flex; align-items: center; justify-content: center;
-  background: rgba(0,0,0,.15);
-  transition: background .3s ease;
-}
-.yt-long .yt-play-btn svg {
-  width: 64px; height: auto;
-  filter: drop-shadow(0 2px 12px rgba(0,0,0,.4));
-  transition: transform .25s ease;
-}
-.yt-long:hover .yt-thumb     { transform: scale(1.04); filter: brightness(.82); }
-.yt-long:hover .yt-play-btn  { background: rgba(0,0,0,.28); }
-.yt-long:hover .yt-play-btn svg { transform: scale(1.1); }
-.yt-long iframe {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%; border: none;
-}
+
 
 
 .yt-header {
@@ -414,6 +348,48 @@ img { display: block; max-width: 100%; }
   flex-shrink: 0;
   border-radius: 4px;
 }
+
+
+/* ─── Long-form: iframe oficial YouTube ─── */
+.lf-embed {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--r);
+  overflow: hidden;
+  background: #000;
+}
+.lf-embed iframe {
+  position: absolute;
+  inset: 0; width: 100%; height: 100%;
+  border: none; display: block;
+}
+
+/* ─── Shorts: thumbnail oficial + botão ─── */
+.short-card { display: flex; flex-direction: column; gap: 0.6rem; }
+.short-thumb {
+  display: block;
+  position: relative;
+  aspect-ratio: 9 / 16;
+  border-radius: var(--r);
+  overflow: hidden;
+  background: #000;
+}
+.short-thumb img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  transition: transform var(--ts), filter .3s ease;
+}
+.short-thumb:hover img { transform: scale(1.03); filter: brightness(.88); }
+.short-watch-btn {
+  display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+  padding: 0.55rem 0.9rem;
+  background: #fff; border: 1px solid var(--border); border-radius: var(--r-sm);
+  font-size: 0.76rem; font-weight: 500; color: var(--ink);
+  transition: border-color var(--t), box-shadow var(--t);
+  text-decoration: none;
+}
+.short-watch-btn:hover { border-color: #FF0000; box-shadow: 0 2px 10px rgba(0,0,0,.07); }
+.short-watch-btn img { height: 14px; width: auto; display: block; }
 
 </style>
 </head>
@@ -468,142 +444,77 @@ img { display: block; max-width: 100%; }
       <div class="pgrid wide">
 
         <article class="pcard">
-          <div class="yt-long" data-videoid="P99JEwAUtB8">
-            <img src="https://i.ytimg.com/vi/P99JEwAUtB8/maxresdefault.jpg" onerror="this.src='https://i.ytimg.com/vi/P99JEwAUtB8/hqdefault.jpg'" alt="" class="yt-thumb">
-            <div class="yt-header">
-              <div class="yt-avatar"></div>
-              <div class="yt-meta">
-                <span class="yt-vtitle">Carregando...</span>
-                <span class="yt-vch">Davik</span>
-              </div>
-              <svg class="yt-sl-icon" viewBox="0 0 90 90" fill="none"><rect width="90" height="90" rx="20" fill="#FF0000"/><path d="M62 45L35 62V28L62 45Z" fill="white"/></svg>
-            </div>
-            <div class="yt-play-btn" aria-label="Play">
-              <svg viewBox="0 0 68 48" fill="none"><rect width="68" height="48" rx="10" fill="#FF0000"/><polygon points="27,14 27,34 47,24" fill="#fff"/></svg>
-            </div>
+          <div class="lf-embed">
+            <iframe src="https://www.youtube.com/embed/P99JEwAUtB8"
+              title="YouTube video player" frameborder="0" loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
           </div>
         </article>
 
         <article class="pcard">
-          <div class="yt-long" data-videoid="tp71DJetuCc">
-            <img src="https://i.ytimg.com/vi/tp71DJetuCc/maxresdefault.jpg" onerror="this.src='https://i.ytimg.com/vi/tp71DJetuCc/hqdefault.jpg'" alt="" class="yt-thumb">
-            <div class="yt-header">
-              <div class="yt-avatar"></div>
-              <div class="yt-meta">
-                <span class="yt-vtitle">Carregando...</span>
-                <span class="yt-vch">Davik</span>
-              </div>
-              <svg class="yt-sl-icon" viewBox="0 0 90 90" fill="none"><rect width="90" height="90" rx="20" fill="#FF0000"/><path d="M62 45L35 62V28L62 45Z" fill="white"/></svg>
-            </div>
-            <div class="yt-play-btn" aria-label="Play">
-              <svg viewBox="0 0 68 48" fill="none"><rect width="68" height="48" rx="10" fill="#FF0000"/><polygon points="27,14 27,34 47,24" fill="#fff"/></svg>
-            </div>
+          <div class="lf-embed">
+            <iframe src="https://www.youtube.com/embed/tp71DJetuCc"
+              title="YouTube video player" frameborder="0" loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
           </div>
         </article>
 
         <article class="pcard">
-          <div class="yt-long" data-videoid="vo8_Xzcc-rc">
-            <img src="https://i.ytimg.com/vi/vo8_Xzcc-rc/maxresdefault.jpg" onerror="this.src='https://i.ytimg.com/vi/vo8_Xzcc-rc/hqdefault.jpg'" alt="" class="yt-thumb">
-            <div class="yt-header">
-              <div class="yt-avatar"></div>
-              <div class="yt-meta">
-                <span class="yt-vtitle">Carregando...</span>
-                <span class="yt-vch">Davik</span>
-              </div>
-              <svg class="yt-sl-icon" viewBox="0 0 90 90" fill="none"><rect width="90" height="90" rx="20" fill="#FF0000"/><path d="M62 45L35 62V28L62 45Z" fill="white"/></svg>
-            </div>
-            <div class="yt-play-btn" aria-label="Play">
-              <svg viewBox="0 0 68 48" fill="none"><rect width="68" height="48" rx="10" fill="#FF0000"/><polygon points="27,14 27,34 47,24" fill="#fff"/></svg>
-            </div>
+          <div class="lf-embed">
+            <iframe src="https://www.youtube.com/embed/vo8_Xzcc-rc"
+              title="YouTube video player" frameborder="0" loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
           </div>
         </article>
 
         <article class="pcard">
-          <div class="yt-long" data-videoid="7GbjIOXxCNc">
-            <img src="https://i.ytimg.com/vi/7GbjIOXxCNc/maxresdefault.jpg" onerror="this.src='https://i.ytimg.com/vi/7GbjIOXxCNc/hqdefault.jpg'" alt="" class="yt-thumb">
-            <div class="yt-header">
-              <div class="yt-avatar"></div>
-              <div class="yt-meta">
-                <span class="yt-vtitle">Carregando...</span>
-                <span class="yt-vch">Davik</span>
-              </div>
-              <svg class="yt-sl-icon" viewBox="0 0 90 90" fill="none"><rect width="90" height="90" rx="20" fill="#FF0000"/><path d="M62 45L35 62V28L62 45Z" fill="white"/></svg>
-            </div>
-            <div class="yt-play-btn" aria-label="Play">
-              <svg viewBox="0 0 68 48" fill="none"><rect width="68" height="48" rx="10" fill="#FF0000"/><polygon points="27,14 27,34 47,24" fill="#fff"/></svg>
-            </div>
+          <div class="lf-embed">
+            <iframe src="https://www.youtube.com/embed/7GbjIOXxCNc"
+              title="YouTube video player" frameborder="0" loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
           </div>
         </article>
 
       </div>
     </div>
 
-    <!-- Panel: Shorts -->
+        <!-- Panel: Shorts -->
     <div class="tab-panel" id="panel-shorts" role="tabpanel" aria-labelledby="tab-shorts">
       <div class="pgrid short">
 
-        <article class="pcard">
-          <div class="yt-short" data-videoid="PEAThTZ3hzI">
-            <img src="https://i.ytimg.com/vi/PEAThTZ3hzI/hqdefault.jpg" alt="Live Clip 1 – Bahiaqz" class="yt-thumb">
-            <div class="yt-header">
-              <div class="yt-avatar"></div>
-              <div class="yt-meta">
-                <span class="yt-vtitle">Live Clip 1 – Bahiaqz</span>
-                <span class="yt-vch">Davik</span>
-              </div>
-              <svg class="yt-sl-icon" viewBox="0 0 90 90" fill="none"><rect width="90" height="90" rx="20" fill="#FF0000"/><path d="M62 45L35 62V28L62 45Z" fill="white"/></svg>
-            </div>
-            <div class="yt-play-btn" aria-label="Play">
-              <svg viewBox="0 0 68 48" fill="none"><rect width="68" height="48" rx="10" fill="#FF0000"/><polygon points="27,14 27,34 47,24" fill="#fff"/></svg>
-            </div>
-          </div>
-          <div class="pmeta">
-            <h3 class="pname">Live Clip 1 – Bahiaqz</h3>
-            <a href="https://youtube.com/shorts/PEAThTZ3hzI" class="pwatch" target="_blank" rel="noopener" data-i18n="watch">Assistir →</a>
-          </div>
-        </article>
+        <div class="short-card">
+          <a href="https://youtube.com/shorts/PEAThTZ3hzI" class="short-thumb" target="_blank" rel="noopener" aria-label="Assistir Short no YouTube">
+            <img src="https://i.ytimg.com/vi/PEAThTZ3hzI/hqdefault.jpg" alt="Short 1">
+          </a>
+          <a href="https://youtube.com/shorts/PEAThTZ3hzI" class="short-watch-btn" target="_blank" rel="noopener">
+            <img src="https://www.youtube.com/img/desktop/yt_1200.png" alt="YouTube" onerror="this.style.display='none'">
+            <span data-i18n="watch">Assistir no YouTube</span>
+          </a>
+        </div>
 
-        <article class="pcard">
-          <div class="yt-short" data-videoid="nORNtKV77hw">
-            <img src="https://i.ytimg.com/vi/nORNtKV77hw/hqdefault.jpg" alt="Short 2" class="yt-thumb">
-            <div class="yt-header">
-              <div class="yt-avatar"></div>
-              <div class="yt-meta">
-                <span class="yt-vtitle">Short 2</span>
-                <span class="yt-vch">Davik</span>
-              </div>
-              <svg class="yt-sl-icon" viewBox="0 0 90 90" fill="none"><rect width="90" height="90" rx="20" fill="#FF0000"/><path d="M62 45L35 62V28L62 45Z" fill="white"/></svg>
-            </div>
-            <div class="yt-play-btn" aria-label="Play">
-              <svg viewBox="0 0 68 48" fill="none"><rect width="68" height="48" rx="10" fill="#FF0000"/><polygon points="27,14 27,34 47,24" fill="#fff"/></svg>
-            </div>
-          </div>
-          <div class="pmeta">
-            <h3 class="pname">Short 2</h3>
-            <a href="https://youtube.com/shorts/nORNtKV77hw" class="pwatch" target="_blank" rel="noopener" data-i18n="watch">Assistir →</a>
-          </div>
-        </article>
+        <div class="short-card">
+          <a href="https://youtube.com/shorts/nORNtKV77hw" class="short-thumb" target="_blank" rel="noopener" aria-label="Assistir Short no YouTube">
+            <img src="https://i.ytimg.com/vi/nORNtKV77hw/hqdefault.jpg" alt="Short 2">
+          </a>
+          <a href="https://youtube.com/shorts/nORNtKV77hw" class="short-watch-btn" target="_blank" rel="noopener">
+            <img src="https://www.youtube.com/img/desktop/yt_1200.png" alt="YouTube" onerror="this.style.display='none'">
+            <span data-i18n="watch">Assistir no YouTube</span>
+          </a>
+        </div>
 
-        <article class="pcard">
-          <div class="yt-short" data-videoid="utWRvQ7wJwM">
-            <img src="https://i.ytimg.com/vi/utWRvQ7wJwM/hqdefault.jpg" alt="Short 3" class="yt-thumb">
-            <div class="yt-header">
-              <div class="yt-avatar"></div>
-              <div class="yt-meta">
-                <span class="yt-vtitle">Short 3</span>
-                <span class="yt-vch">Davik</span>
-              </div>
-              <svg class="yt-sl-icon" viewBox="0 0 90 90" fill="none"><rect width="90" height="90" rx="20" fill="#FF0000"/><path d="M62 45L35 62V28L62 45Z" fill="white"/></svg>
-            </div>
-            <div class="yt-play-btn" aria-label="Play">
-              <svg viewBox="0 0 68 48" fill="none"><rect width="68" height="48" rx="10" fill="#FF0000"/><polygon points="27,14 27,34 47,24" fill="#fff"/></svg>
-            </div>
-          </div>
-          <div class="pmeta">
-            <h3 class="pname">Short 3</h3>
-            <a href="https://youtube.com/shorts/utWRvQ7wJwM" class="pwatch" target="_blank" rel="noopener" data-i18n="watch">Assistir →</a>
-          </div>
-        </article>
+        <div class="short-card">
+          <a href="https://youtube.com/shorts/utWRvQ7wJwM" class="short-thumb" target="_blank" rel="noopener" aria-label="Assistir Short no YouTube">
+            <img src="https://i.ytimg.com/vi/utWRvQ7wJwM/hqdefault.jpg" alt="Short 3">
+          </a>
+          <a href="https://youtube.com/shorts/utWRvQ7wJwM" class="short-watch-btn" target="_blank" rel="noopener">
+            <img src="https://www.youtube.com/img/desktop/yt_1200.png" alt="YouTube" onerror="this.style.display='none'">
+            <span data-i18n="watch">Assistir no YouTube</span>
+          </a>
+        </div>
 
       </div>
     </div>
@@ -802,76 +713,10 @@ function detectLang() {
 /* ─── Public toggle ─── */
 window.setLang = function(lang) { applyLang(lang); };
 
-/* ─── Títulos reais via oEmbed (todos) + avatar + inline play ─── */
-(function() {
-  var all = [
-    'P99JEwAUtB8','tp71DJetuCc','vo8_Xzcc-rc','7GbjIOXxCNc',
-    'PEAThTZ3hzI','nORNtKV77hw','utWRvQ7wJwM'
-  ];
-  var avatarDone = false;
-
-  all.forEach(function(id) {
-    fetch('https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=' + id + '&format=json')
-      .then(function(r){ return r.json(); })
-      .then(function(d){
-        if (!d) return;
-        var el = document.querySelector('[data-videoid="' + id + '"]');
-        if (el) {
-          var t = el.querySelector('.yt-vtitle');
-          if (t && d.title) t.textContent = d.title;
-        }
-        if (!avatarDone && d.author_url) {
-          avatarDone = true;
-          fetch('https://corsproxy.io/?' + encodeURIComponent(d.author_url))
-            .then(function(r){ return r.text(); })
-            .then(function(html){
-              var m = html.match(/"avatar":{"thumbnails":\[{"url":"([^"]+)"/) ||
-                      html.match(/og:image[^>]+content="([^"]+)"/);
-              if (!m) return;
-              var url = m[1].replace(/\\u0026/g,'&');
-              document.querySelectorAll('.yt-avatar').forEach(function(a){
-                a.innerHTML = '<img src="' + url + '" alt="Davik">';
-              });
-            }).catch(function(){});
-        }
-      }).catch(function(){});
-  });
-})();
-
-/* ─── Inline play — Long-form ─── */
-document.querySelectorAll('.yt-long[data-videoid]').forEach(function(el) {
-  el.addEventListener('click', function() {
-    var id = el.getAttribute('data-videoid');
-    el.innerHTML =
-      '<iframe src="https://www.youtube-nocookie.com/embed/' + id +
-      '?autoplay=1&rel=0&modestbranding=1&controls=1"' +
-      ' allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"' +
-      ' allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:none;"></iframe>';
-    el.style.cursor = 'default';
-  });
-});
-
-/* ─── Inline play — Shorts ─── */
-document.querySelectorAll('.yt-short[data-videoid]').forEach(function(el) {
-  el.addEventListener('click', function() {
-    var id = el.getAttribute('data-videoid');
-    el.innerHTML =
-      '<iframe src="https://www.youtube-nocookie.com/embed/' + id +
-      '?autoplay=1&rel=0&playsinline=1&modestbranding=1&controls=1"' +
-      ' allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"' +
-      ' allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:none;"></iframe>';
-    el.style.cursor = 'default';
-  });
-});
-
-
-
-
+/* ─── Tabs ─── */
 document.querySelectorAll('.tab-btn').forEach(function(btn) {
   btn.addEventListener('click', function() {
     var panelId = btn.getAttribute('aria-controls');
-
-    /* Deactivate all */
     document.querySelectorAll('.tab-btn').forEach(function(b) {
       b.classList.remove('active');
       b.setAttribute('aria-selected', 'false');
@@ -879,15 +724,11 @@ document.querySelectorAll('.tab-btn').forEach(function(btn) {
     document.querySelectorAll('.tab-panel').forEach(function(p) {
       p.classList.remove('active');
     });
-
-    /* Activate clicked */
     btn.classList.add('active');
     btn.setAttribute('aria-selected', 'true');
     document.getElementById(panelId).classList.add('active');
   });
 });
-
-
 
 /* ─── Init ─── */
 applyLang(detectLang());

@@ -358,6 +358,7 @@ img { display: block; max-width: 100%; }
   overflow: hidden;
   background: #000;
 }
+.short-embed { aspect-ratio: 9 / 16; }
 .lf-embed iframe {
   position: absolute;
   inset: 0; width: 100%; height: 100%;
@@ -486,35 +487,32 @@ img { display: block; max-width: 100%; }
     <div class="tab-panel" id="panel-shorts" role="tabpanel" aria-labelledby="tab-shorts">
       <div class="pgrid short">
 
-        <div class="short-card">
-          <a href="https://youtube.com/shorts/PEAThTZ3hzI" class="short-thumb" target="_blank" rel="noopener" aria-label="Assistir Short no YouTube">
-            <img src="https://i.ytimg.com/vi/PEAThTZ3hzI/hqdefault.jpg" alt="Short 1">
-          </a>
-          <a href="https://youtube.com/shorts/PEAThTZ3hzI" class="short-watch-btn" target="_blank" rel="noopener">
-            <img src="https://www.youtube.com/img/desktop/yt_1200.png" alt="YouTube" onerror="this.style.display='none'">
-            <span data-i18n="watch">Assistir no YouTube</span>
-          </a>
-        </div>
+        <article class="pcard">
+          <div class="lf-embed short-embed">
+            <iframe src="https://www.youtube.com/embed/PEAThTZ3hzI"
+              title="YouTube video player" frameborder="0" loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+        </article>
 
-        <div class="short-card">
-          <a href="https://youtube.com/shorts/nORNtKV77hw" class="short-thumb" target="_blank" rel="noopener" aria-label="Assistir Short no YouTube">
-            <img src="https://i.ytimg.com/vi/nORNtKV77hw/hqdefault.jpg" alt="Short 2">
-          </a>
-          <a href="https://youtube.com/shorts/nORNtKV77hw" class="short-watch-btn" target="_blank" rel="noopener">
-            <img src="https://www.youtube.com/img/desktop/yt_1200.png" alt="YouTube" onerror="this.style.display='none'">
-            <span data-i18n="watch">Assistir no YouTube</span>
-          </a>
-        </div>
+        <article class="pcard">
+          <div class="lf-embed short-embed">
+            <iframe src="https://www.youtube.com/embed/nORNtKV77hw"
+              title="YouTube video player" frameborder="0" loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+        </article>
 
-        <div class="short-card">
-          <a href="https://youtube.com/shorts/utWRvQ7wJwM" class="short-thumb" target="_blank" rel="noopener" aria-label="Assistir Short no YouTube">
-            <img src="https://i.ytimg.com/vi/utWRvQ7wJwM/hqdefault.jpg" alt="Short 3">
-          </a>
-          <a href="https://youtube.com/shorts/utWRvQ7wJwM" class="short-watch-btn" target="_blank" rel="noopener">
-            <img src="https://www.youtube.com/img/desktop/yt_1200.png" alt="YouTube" onerror="this.style.display='none'">
-            <span data-i18n="watch">Assistir no YouTube</span>
-          </a>
-        </div>
+        <article class="pcard">
+          <div class="lf-embed short-embed">
+            <iframe src="https://www.youtube.com/embed/utWRvQ7wJwM"
+              title="YouTube video player" frameborder="0" loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+        </article>
 
       </div>
     </div>

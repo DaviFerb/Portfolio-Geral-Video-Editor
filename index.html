@@ -293,6 +293,7 @@ img { display: block; max-width: 100%; }
   .sobre-layout { grid-template-columns: 1fr; gap: 2.5rem; }
 }
 @media (max-width: 640px) {
+  .nav-links { display: none; }
   .portfolio, .sobre, .contato { padding: 4.5rem 0; }
   .port-head { margin-bottom: 1.75rem; }
   .tabs      { margin-bottom: 2rem; }
@@ -359,7 +360,87 @@ img { display: block; max-width: 100%; }
 }
 
 
-/* ─── Long-form: iframe oficial YouTube ─── */
+/* ── Mobile FAB nav ── */
+.mob-fab-wrap {
+  display: none;
+}
+@media (max-width: 640px) {
+  .mob-fab-wrap {
+    display: block;
+    position: fixed;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 200;
+  }
+  .mob-fab {
+    display: flex; align-items: center; gap: .6rem;
+    background: #1e1e1e;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 999px;
+    padding: .7rem 1.25rem;
+    cursor: pointer;
+    box-shadow: 0 4px 24px rgba(0,0,0,.5);
+    transition: background var(--t);
+  }
+  .mob-fab:hover { background: #2a2a2a; }
+  .mob-fab-icon {
+    display: flex; flex-direction: column; gap: 4px;
+    width: 18px;
+  }
+  .mob-fab-icon span {
+    display: block; height: 1.5px;
+    background: var(--ink); border-radius: 2px;
+    transition: transform .3s ease, opacity .3s ease;
+  }
+  .mob-fab-label {
+    font-size: .75rem; font-weight: 600;
+    letter-spacing: .04em; color: var(--ink);
+  }
+  /* Icon animates to X when open */
+  .mob-fab.open .mob-fab-icon span:nth-child(1) { transform: translateY(5.5px) rotate(45deg); }
+  .mob-fab.open .mob-fab-icon span:nth-child(2) { opacity: 0; }
+  .mob-fab.open .mob-fab-icon span:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg); }
+
+  /* Menu popup */
+  .mob-nav-menu {
+    position: absolute;
+    bottom: calc(100% + .65rem);
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    background: #1a1a1a;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: .5rem;
+    min-width: 160px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s ease, transform .25s ease;
+    box-shadow: 0 8px 32px rgba(0,0,0,.6);
+  }
+  .mob-nav-menu.open {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateX(-50%) translateY(0);
+  }
+  .mob-nav-menu a {
+    display: block;
+    padding: .75rem 1.1rem;
+    font-size: .85rem; font-weight: 500;
+    color: var(--muted);
+    border-radius: 10px;
+    transition: background var(--t), color var(--t);
+    text-align: center;
+  }
+  .mob-nav-menu a:hover {
+    background: rgba(255,255,255,.06);
+    color: var(--ink);
+  }
+  .mob-nav-menu a + a {
+    border-top: 1px solid rgba(255,255,255,.05);
+  }
+}
+
 .lf-embed {
   position: relative;
   aspect-ratio: 16 / 9;
@@ -639,9 +720,44 @@ img { display: block; max-width: 100%; }
   <p>© 2025 Davik</p>
 </footer>
 
+<!-- Mobile FAB Navigation -->
+<div class="mob-fab-wrap" id="mob-fab-wrap">
+  <div class="mob-nav-menu" id="mob-nav-menu">
+    <a href="#portfolio" data-i18n="nav.portfolio" onclick="closeMobNav()">Portfolio</a>
+    <a href="#sobre"     data-i18n="nav.about"     onclick="closeMobNav()">Sobre</a>
+    <a href="#contato"   data-i18n="nav.contact"   onclick="closeMobNav()">Contato</a>
+  </div>
+  <button class="mob-fab" id="mob-fab-btn" onclick="toggleMobNav()" aria-label="Menu">
+    <div class="mob-fab-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <span class="mob-fab-label">Menu</span>
+  </button>
+</div>
+
 <script>
 (function(){
 'use strict';
+
+/* ─── Mobile FAB ─── */
+function toggleMobNav() {
+  var btn  = document.getElementById('mob-fab-btn');
+  var menu = document.getElementById('mob-nav-menu');
+  var open = menu.classList.toggle('open');
+  btn.classList.toggle('open', open);
+}
+function closeMobNav() {
+  document.getElementById('mob-fab-btn').classList.remove('open');
+  document.getElementById('mob-nav-menu').classList.remove('open');
+}
+window.toggleMobNav = toggleMobNav;
+window.closeMobNav  = closeMobNav;
+document.addEventListener('click', function(e) {
+  var wrap = document.getElementById('mob-fab-wrap');
+  if (wrap && !wrap.contains(e.target)) closeMobNav();
+});
 
 /* ─── Translations ─── */
 var T = {

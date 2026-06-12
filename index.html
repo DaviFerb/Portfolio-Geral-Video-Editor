@@ -31,6 +31,18 @@ body {
   font-weight: 300; line-height: 1.7;
   -webkit-font-smoothing: antialiased; overflow-x: hidden;
 }
+body::before {
+  content: '';
+  position: fixed;
+  top: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  height: 70vh;
+  background: radial-gradient(ellipse at 50% 0%, rgba(96, 165, 250, 0.10) 0%, transparent 68%);
+  pointer-events: none;
+  z-index: 150;
+}
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 img { display: block; max-width: 100%; }

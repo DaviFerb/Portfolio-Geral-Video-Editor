@@ -141,7 +141,8 @@ img { display: block; max-width: 100%; }
   transform: translateY(-2px);
 }
 .hero-btn {
-  display: inline-block; padding: .7rem 1.85rem; background: #FFFFFF; color: #111111;
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  padding: .7rem 1.85rem; background: #FFFFFF; color: #111111;
   font-size: .78rem; font-weight: 400; letter-spacing: .06em; border-radius: var(--r-sm);
   transition: background var(--t), transform var(--t); font-family: var(--f);
 }
@@ -540,10 +541,13 @@ img { display: block; max-width: 100%; }
     <p class="hero-sub">Long-form &nbsp;·&nbsp; Shorts &nbsp;·&nbsp; Motion Graphics</p>
     <p class="hero-desc" data-i18n="hero.desc">Ajudo criadores e empresas a transformar ideias em vídeos envolventes.</p>
     <div class="hero-btns">
-      <a href="#portfolio" class="hero-btn" data-i18n="hero.btn">Ver Portfolio</a>
-      <a href="#contato" class="hero-btn-contact" data-i18n="hero.contact">
-        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6l-4 3V4z"/></svg>
-        Fale Comigo
+      <a href="#portfolio" class="hero-btn">
+        <svg viewBox="0 0 16 16" fill="currentColor" width="11" height="11" style="flex-shrink:0;margin-right:1px"><polygon points="3,1 13,8 3,15"/></svg>
+        <span data-i18n="hero.btn">Ver Portfolio</span>
+      </a>
+      <a href="#contato" class="hero-btn-contact">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="15" height="15" style="flex-shrink:0"><path d="M2 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6l-4 3V4z"/></svg>
+        <span data-i18n="hero.contact">Fale Comigo</span>
       </a>
     </div>
   </div>

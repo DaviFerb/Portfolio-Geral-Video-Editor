@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>davi_portfolio_final_v12.prproj — Davi Edits</title>
+<title>davik_portfolio_final_v12.prproj — Davik Edits</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -30,6 +30,12 @@
   h1,h2,h3{ font-family:'Space Grotesk', sans-serif; margin:0; font-weight:700; letter-spacing:-0.01em; }
   .wrap{ max-width:1180px; margin:0 auto; padding:0 24px; }
   section{ padding:70px 0; }
+  .section-tabbed{ position:relative; border-top:1px solid var(--line); }
+  .divisa-tab{
+    position:absolute; top:0; left:24px; transform:translateY(-100%);
+    font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:700; letter-spacing:0.07em;
+    text-transform:uppercase; color:var(--bg); padding:6px 14px; border-radius:5px 5px 0 0;
+  }
   a{ color:inherit; }
 
   .label{
@@ -210,20 +216,43 @@
   .clip-card.is-visible{ display:flex; }
 
   /* ---------------- effects panel (services) ---------------- */
-  .fx-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-  @media (max-width:860px){ .fx-grid{ grid-template-columns:repeat(2,1fr); } }
-  @media (max-width:560px){ .fx-grid{ grid-template-columns:1fr; } }
+  .svc-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  @media (max-width:860px){ .svc-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:560px){ .svc-grid{ grid-template-columns:1fr; } }
 
-  .fx-card{
-    background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:18px;
-    transition:border-color .15s ease, transform .15s ease;
+  .svc-card{
+    position:relative; background:var(--panel); border:1px solid var(--line); border-radius:8px;
+    display:flex; flex-direction:column; transition:border-color .15s ease, transform .15s ease;
   }
-  .fx-card:hover{ border-color:var(--red); transform:translateY(-2px); }
-  .fx-head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; }
-  .fx-icon{ font-size:20px; }
-  .fx-plat{ font-family:'JetBrains Mono',monospace; font-size:9.5px; color:var(--muted); border:1px solid var(--line); padding:2px 6px; border-radius:3px; }
-  .fx-card h3{ font-size:15.5px; margin-bottom:6px; }
-  .fx-card p{ font-size:13px; color:#B7B7BE; line-height:1.55; margin:0; }
+  .svc-card:hover{ border-color:var(--red); transform:translateY(-2px); }
+  .svc-tab{ display:flex; align-items:center; gap:8px; padding:10px 14px; border-bottom:1px solid var(--line); }
+  .svc-ext{
+    font-family:'JetBrains Mono',monospace; font-size:9.5px; font-weight:700; color:var(--bg);
+    padding:2px 6px; border-radius:3px; letter-spacing:0.03em;
+  }
+  .svc-file{ font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--muted); }
+  .svc-body{ padding:20px 20px 22px; display:flex; flex-direction:column; flex:1; }
+  .svc-body h3{ font-size:19px; margin-bottom:10px; }
+  .svc-body p.desc{ font-size:13.5px; color:#C7C7CC; line-height:1.6; margin:0 0 16px; }
+  .svc-divider{ border-top:1px dashed var(--line); margin:0 0 14px; }
+  .svc-meta{
+    font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--muted);
+    margin-bottom:16px; text-transform:uppercase; letter-spacing:0.02em;
+  }
+  .svc-list{ list-style:none; margin:0 0 22px; padding:0; display:flex; flex-direction:column; gap:8px; }
+  .svc-list li{ font-size:13px; color:#DADADE; display:flex; gap:8px; align-items:flex-start; line-height:1.4; }
+  .svc-list li::before{ content:"▸"; color:var(--red); flex-shrink:0; }
+  .svc-open{
+    margin-top:auto; font-family:'JetBrains Mono',monospace; font-size:11.5px; font-weight:700;
+    text-decoration:none; color:var(--white); border-bottom:2px solid var(--red); padding-bottom:2px;
+    display:inline-block; width:fit-content; text-transform:uppercase; letter-spacing:0.04em;
+  }
+  .svc-open:hover{ color:var(--red); }
+  .svc-ribbon{
+    position:absolute; top:-11px; right:16px; background:var(--red); color:var(--white);
+    font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:700; padding:5px 10px;
+    border-radius:3px; transform:rotate(3deg); box-shadow:2px 2px 0 rgba(0,0,0,0.5);
+  }
 
   /* ---------------- timeline (process) ---------------- */
   .timeline-panel{ background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:20px; overflow-x:auto; }
@@ -289,6 +318,46 @@
     margin-top:22px; width:100%; justify-content:center; padding:14px; font-size:13px;
   }
 
+  .export-ref{
+    display:flex; align-items:center; gap:8px; font-family:'JetBrains Mono',monospace;
+    font-size:11px; letter-spacing:0.06em; color:var(--muted); margin-bottom:16px; text-transform:uppercase;
+  }
+  .export-ref .sq{ width:8px; height:8px; background:var(--red); flex-shrink:0; }
+
+  .export-field{ padding:16px 0; border-bottom:1px dashed var(--line); }
+  .export-field:first-of-type{ padding-top:0; }
+  .export-field .flabel{
+    font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--muted);
+    text-transform:uppercase; letter-spacing:0.05em; margin-bottom:6px;
+  }
+  .export-field .fvalue{ font-size:16px; font-weight:600; color:var(--white); }
+  .export-field .fvalue a{ text-decoration:none; color:inherit; }
+  .export-field .fvalue a:hover{ color:var(--red); }
+
+  .export-socials{ display:flex; gap:10px; flex-wrap:wrap; margin:20px 0 22px; }
+  .social-pill{
+    font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; letter-spacing:0.03em;
+    text-transform:uppercase; text-decoration:none; color:var(--white);
+    border:1px solid var(--line); border-radius:6px; padding:9px 14px;
+    transition:border-color .15s ease, color .15s ease, transform .15s ease, box-shadow .15s ease;
+    box-shadow: 3px 3px 0 var(--red);
+    display:inline-block;
+  }
+  .social-pill:hover{ border-color:var(--red); color:var(--red); transform:translate(-2px,-2px); box-shadow:5px 5px 0 var(--red); }
+  .social-pill:nth-child(2){ box-shadow: 3px 3px 0 var(--yellow); }
+  .social-pill:nth-child(2):hover{ border-color:var(--yellow); color:var(--yellow); box-shadow:5px 5px 0 var(--yellow); }
+  .social-pill:nth-child(3){ box-shadow: 3px 3px 0 var(--blue); }
+  .social-pill:nth-child(3):hover{ border-color:var(--blue); color:var(--blue); box-shadow:5px 5px 0 var(--blue); }
+
+  .export-status{
+    display:flex; align-items:center; gap:8px; margin-top:18px;
+    font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--green);
+  }
+  .export-status .blink{
+    width:7px; height:7px; border-radius:50%; background:var(--green);
+    animation:blink 1.6s ease-in-out infinite;
+  }
+
   footer{
     border-top:1px solid var(--line); padding:20px 0; font-family:'JetBrains Mono',monospace;
     font-size:11px; color:var(--muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
@@ -315,11 +384,11 @@
 <div class="titlebar">
   <div class="titlebar-top">
     <div class="traffic"><span class="r"></span><span class="y"></span><span class="g"></span></div>
-    <span>davi_portfolio_final_v12.prproj</span>
+    <span>davik_portfolio_final_v12.prproj</span>
     <div class="autosave"><span class="blink"></span><span>autosave ativado</span></div>
   </div>
   <div class="wrap menubar">
-    <div class="logo">DAVI<span>_EDITS</span>.mov</div>
+    <div class="logo">DAVIK<span>_EDITS</span>.mov</div>
     <ul class="menu-links">
       <li><a href="#midia">Mídia</a></li>
       <li><a href="#efeitos">Efeitos</a></li>
@@ -367,7 +436,8 @@
 </section>
 
 <!-- MEDIA BIN / PORTFOLIO -->
-<section id="midia">
+<section id="midia" class="section-tabbed">
+  <span class="divisa-tab" style="background:var(--blue);">Mídia</span>
   <div class="wrap">
     <div class="panel-title"><span class="dot"></span><span class="label">painel · media bin</span></div>
     <h2 class="shake-title" style="margin-bottom:22px;">Projetos catalogados</h2>
@@ -481,47 +551,83 @@
 </section>
 
 <!-- EFFECTS PANEL / SERVICES -->
-<section id="efeitos">
+<section id="efeitos" class="section-tabbed">
+  <span class="divisa-tab" style="background:var(--yellow);">Serviços</span>
   <div class="wrap">
-    <div class="panel-title"><span class="dot"></span><span class="label">painel · efeitos &amp; presets</span></div>
-    <h2 class="shake-title" style="margin-bottom:34px;">O que entra na timeline</h2>
-    <div class="fx-grid">
-      <div class="fx-card">
-        <div class="fx-head"><span class="fx-icon">▶️</span><span class="fx-plat">YOUTUBE</span></div>
-        <h3>Long-form</h3>
-        <p>Ritmo, cortes secos, legendas dinâmicas e thumbnail que faz clicar.</p>
+    <div class="panel-title"><span class="dot"></span><span class="label">painel · serviços</span></div>
+    <h2 class="shake-title" style="margin-bottom:10px;">Serviços</h2>
+    <p style="color:#B7B7BE; font-size:14px; margin:0 0 34px;">Três pastas. Escolha a que faz sentido pro seu canal agora.</p>
+
+    <div class="svc-grid">
+
+      <div class="svc-card">
+        <div class="svc-tab">
+          <span class="svc-ext" style="background:var(--blue);">PRPROJ</span>
+          <span class="svc-file">edicao_longa</span>
+        </div>
+        <div class="svc-body">
+          <h3>Vídeos longos</h3>
+          <p class="desc">Pra quem precisa prender o público até o final — vlogs, podcasts, gameplay, documentário.</p>
+          <div class="svc-divider"></div>
+          <div class="svc-meta">Tipo: Projeto Premiere · Prazo: até 10 dias úteis</div>
+          <ul class="svc-list">
+            <li>Edição completa com ritmo e narrativa</li>
+            <li>Trilha sonora e efeitos sonoros</li>
+            <li>Correção de cor</li>
+            <li>Legendas estilizadas</li>
+          </ul>
+          <a href="#exportar" class="svc-open">Abrir projeto →</a>
+        </div>
       </div>
-      <div class="fx-card">
-        <div class="fx-head"><span class="fx-icon">🎬</span><span class="fx-plat">REELS/TIKTOK</span></div>
-        <h3>Shorts &amp; Reels</h3>
-        <p>Gancho nos primeiros 2s, corte no beat e formato 9:16 otimizado.</p>
+
+      <div class="svc-card">
+        <div class="svc-tab">
+          <span class="svc-ext" style="background:var(--yellow);">MP4</span>
+          <span class="svc-file">shorts_reels</span>
+        </div>
+        <div class="svc-body">
+          <h3>Shorts &amp; Reels</h3>
+          <p class="desc">Conteúdo vertical que prende em menos de 3 segundos. Feito pra viralizar no Shorts, Reels e TikTok.</p>
+          <div class="svc-divider"></div>
+          <div class="svc-meta">Tipo: Projeto Premiere · Prazo: até 4 dias úteis</div>
+          <ul class="svc-list">
+            <li>Edição dinâmica e impactante</li>
+            <li>Corte sincronizado com a música</li>
+            <li>Legendas estilizadas</li>
+            <li>Formato 9:16 otimizado</li>
+          </ul>
+          <a href="#exportar" class="svc-open">Abrir projeto →</a>
+        </div>
       </div>
-      <div class="fx-card">
-        <div class="fx-head"><span class="fx-icon">🎨</span><span class="fx-plat">AFTER EFFECTS</span></div>
-        <h3>Motion &amp; Color</h3>
-        <p>Grafismos, transições autorais e correção de cor com identidade própria.</p>
+
+      <div class="svc-card">
+        <div class="svc-ribbon">Mais pedido</div>
+        <div class="svc-tab">
+          <span class="svc-ext" style="background:var(--green);">ZIP</span>
+          <span class="svc-file">pacote_completo</span>
+        </div>
+        <div class="svc-body">
+          <h3>Pacote completo</h3>
+          <p class="desc">A solução total. Vídeo longo e cortes verticais, tudo com a mesma identidade visual.</p>
+          <div class="svc-divider"></div>
+          <div class="svc-meta">Tipo: Pacote comprimido · Contém: 2 itens</div>
+          <ul class="svc-list">
+            <li>Edição de vídeo longo</li>
+            <li>Corte e edição de Shorts/Reels</li>
+            <li>Mesma identidade visual entre os formatos</li>
+            <li>Entrega combinada, um único prazo</li>
+          </ul>
+          <a href="#exportar" class="svc-open">Abrir projeto →</a>
+        </div>
       </div>
-      <div class="fx-card">
-        <div class="fx-head"><span class="fx-icon">🎮</span><span class="fx-plat">TWITCH</span></div>
-        <h3>Highlights de live</h3>
-        <p>Melhores momentos de stream virando clipes prontos pra postar.</p>
-      </div>
-      <div class="fx-card">
-        <div class="fx-head"><span class="fx-icon">💼</span><span class="fx-plat">LINKEDIN</span></div>
-        <h3>Conteúdo corporativo</h3>
-        <p>Vídeo institucional e case de cliente com tom profissional.</p>
-      </div>
-      <div class="fx-card">
-        <div class="fx-head"><span class="fx-icon">💬</span><span class="fx-plat">TODAS</span></div>
-        <h3>Legendagem &amp; SFX</h3>
-        <p>Legenda estilizada, efeito sonoro e mixagem pra prender atenção.</p>
-      </div>
+
     </div>
   </div>
 </section>
 
 <!-- TIMELINE / PROCESS -->
-<section id="timeline">
+<section id="timeline" class="section-tabbed">
+  <span class="divisa-tab" style="background:var(--green); color:var(--ink,#0A0A0A);">Timeline</span>
   <div class="wrap">
     <div class="panel-title"><span class="dot"></span><span class="label">painel · timeline</span></div>
     <h2 class="shake-title" style="margin-bottom:34px;">Como o projeto anda</h2>
@@ -567,21 +673,40 @@
 
 
 <!-- EXPORT / CONTACT -->
-<section id="exportar">
+<section id="exportar" class="section-tabbed">
+  <span class="divisa-tab" style="background:var(--red);">Briefing</span>
   <div class="wrap">
     <div class="panel-title"><span class="dot"></span><span class="label">painel · exportar</span></div>
     <div class="export-panel">
       <div class="export-grid">
         <div>
+          <div class="export-ref"><span class="sq"></span>REF: DAVIK-01 · NOVO BRIEFING</div>
           <h2 class="shake-title">Renderizar o próximo projeto?</h2>
           <p class="sub">Manda o material bruto e a referência — a saída volta pronta pra publicar. Resposta em até 24h.</p>
         </div>
         <div>
-          <div class="export-row"><span class="k">X</span><span class="v"><a href="#">@davi.edits</a></span></div>
-          <div class="export-row"><span class="k">DISCORD</span><span class="v"><a href="#">davi.edits</a></span></div>
-          <div class="export-row"><span class="k">INSTAGRAM</span><span class="v"><a href="#">@davi.edits</a></span></div>
-          <div class="export-row"><span class="k">PRESET</span><span class="v">Resposta em 24h</span></div>
+          <div class="export-field">
+            <div class="flabel">X</div>
+            <div class="fvalue"><a href="https://x.com/DvFerrz">@DvFerrz</a></div>
+          </div>
+          <div class="export-field">
+            <div class="flabel">E-mail</div>
+            <div class="fvalue"><a href="mailto:daviferrb011@gmail.com">daviferrb011@gmail.com</a></div>
+          </div>
+          <div class="export-field" style="border-bottom:none;">
+            <div class="flabel">Preset</div>
+            <div class="fvalue">Resposta em 24h</div>
+          </div>
+
+          <div class="export-socials">
+            <a href="https://ytjobs.co/talent/profile/539141?r=303" class="social-pill">YTJobs</a>
+            <a href="https://www.instagram.com/davik193/" class="social-pill">Instagram</a>
+            <a href="#" class="social-pill">Discord</a>
+          </div>
+
           <a href="#" class="btn btn-red render-btn">● Exportar contato</a>
+
+          <div class="export-status"><span class="blink"></span>Arquivo aberto para novos projetos</div>
         </div>
       </div>
     </div>
@@ -590,7 +715,7 @@
 
 <footer>
   <div class="wrap">
-    <span>© 2026 DAVI_EDITS.PRPROJ</span>
+    <span>© 2026 DAVIK_EDITS.PRPROJ</span>
     <span class="ok">● FILA DE RENDERIZAÇÃO: 1 CONCLUÍDO · DISPONÍVEL PRA NOVOS PROJETOS</span>
   </div>
 </footer>

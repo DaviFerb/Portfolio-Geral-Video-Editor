@@ -171,6 +171,8 @@
     border-bottom:1px solid var(--line); background:var(--panel-2);
   }
   .clip-thumb iframe{ width:100%; height:100%; border:0; display:block; }
+  .bin-grid.mode-shorts .clip-thumb{ aspect-ratio:9/16; }
+  @media (max-width:760px){ .bin-grid.mode-shorts{ grid-template-columns:repeat(2,1fr); } }
   .clip-thumb .dur{
     position:absolute; bottom:6px; right:6px; font-family:'JetBrains Mono',monospace; font-size:10px;
     background:rgba(0,0,0,0.6); padding:2px 6px; border-radius:3px;
@@ -610,9 +612,11 @@
   // media bin tabs
   const tabs = document.querySelectorAll('.bin-tab');
   const cards = document.querySelectorAll('.clip-card[data-cat]');
+  const binGrid = document.getElementById('binGrid');
   function setTab(name){
     tabs.forEach(t => t.classList.toggle('active', t.dataset.tab === name));
     cards.forEach(c => c.classList.toggle('is-visible', c.dataset.cat === name));
+    binGrid.classList.toggle('mode-shorts', name === 'shorts');
   }
   tabs.forEach(t => t.addEventListener('click', () => setTab(t.dataset.tab)));
   setTab('longform');

@@ -156,11 +156,12 @@
   .bin-tab .count{ color:var(--muted); }
   .bin-tab.active{ color:var(--white); border-bottom-color:var(--red); }
   .bin-tab.active .count{ color:var(--red); }
-  .bin-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+  .bin-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
   .bin-grid[hidden]{ display:none; }
-  @media (max-width:1080px){ .bin-grid{ grid-template-columns:repeat(3,1fr); } }
-  @media (max-width:760px){ .bin-grid{ grid-template-columns:repeat(2,1fr); } }
-  @media (max-width:480px){ .bin-grid{ grid-template-columns:1fr; } }
+  .bin-grid.mode-shorts{ grid-template-columns:repeat(4,1fr); }
+  @media (max-width:1080px){ .bin-grid.mode-shorts{ grid-template-columns:repeat(3,1fr); } }
+  @media (max-width:760px){ .bin-grid{ grid-template-columns:1fr; } .bin-grid.mode-shorts{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:480px){ .bin-grid.mode-shorts{ grid-template-columns:1fr; } }
 
   .clip-card{
     background:var(--panel); border:1px solid var(--line); border-radius:6px; overflow:hidden;

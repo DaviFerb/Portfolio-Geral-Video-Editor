@@ -262,6 +262,60 @@ img { display: block; max-width: 100%; }
 .pwatch:hover { color: var(--accent); }
 
 /* ── SOBRE ── */
+/* ─── Serviços ─── */
+.servicos { padding: 7rem 0; border-top: 1px solid var(--border); }
+.srv-head  { margin-bottom: 3rem; }
+.srv-title { margin-top: 0.5rem; max-width: 520px; }
+.srv-grid  { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; }
+.srv-card  {
+  position: relative; background: #161616;
+  border: 1px solid var(--border); border-radius: var(--r);
+  padding: 1.5rem; display: flex; flex-direction: column; gap: 0.9rem;
+  transition: border-color var(--t), transform var(--t);
+}
+.srv-card:hover { border-color: rgba(255,255,255,0.18); transform: translateY(-6px); }
+.srv-card--highlight { border-color: rgba(255,255,255,0.15); }
+.srv-badge-popular {
+  position: absolute; top: -0.75rem; right: 1rem;
+  background: var(--ink); color: #111;
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.08em;
+  padding: 0.2rem 0.65rem; border-radius: 999px;
+}
+.srv-card-top { display: flex; align-items: center; gap: 0.6rem; }
+.srv-tag {
+  font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em;
+  padding: 0.2rem 0.5rem; border-radius: 4px;
+  background: rgba(255,255,255,0.1); color: var(--muted);
+}
+.srv-tag--mp4 { background: rgba(59,130,246,0.15); color: #60a5fa; }
+.srv-tag--zip { background: rgba(34,197,94,0.15);  color: #4ade80; }
+.srv-filename { font-size: 0.72rem; font-weight: 400; color: var(--muted); font-family: monospace; }
+.srv-name  { font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.02em; line-height: 1.2; }
+.srv-desc  { font-size: 0.84rem; font-weight: 300; color: var(--muted); line-height: 1.7; }
+.srv-meta  {
+  font-size: 0.6rem; font-weight: 500; letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.2);
+  border-top: 1px dashed var(--border); padding-top: 0.75rem;
+}
+.srv-list  { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; flex: 1; }
+.srv-list li {
+  font-size: 0.82rem; font-weight: 300; color: var(--muted);
+  padding-left: 1rem; position: relative;
+}
+.srv-list li::before {
+  content: '▸'; position: absolute; left: 0;
+  color: rgba(255,255,255,0.3); font-size: 0.65rem; top: 2px;
+}
+.srv-cta {
+  display: inline-block; font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.1em; color: var(--ink); text-transform: uppercase;
+  border-top: 1px solid var(--border); padding-top: 0.85rem;
+  margin-top: auto; transition: color var(--t);
+}
+.srv-cta:hover { color: var(--muted); }
+@media (max-width: 900px) { .srv-grid { grid-template-columns: 1fr; } }
+
+/* ─── Sobre ─── */
 .sobre { padding: 7rem 0; border-top: 1px solid var(--border); }
 .sobre-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
 .sobre-badge {
@@ -559,9 +613,10 @@ img { display: block; max-width: 100%; }
   <div class="nav-inner">
     <a href="#home" class="nav-logo">Davik</a>
     <nav class="nav-links" aria-label="Menu">
-      <a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a>
-      <a href="#sobre"    data-i18n="nav.about">Sobre</a>
-      <a href="#contato"  data-i18n="nav.contact">Contato</a>
+      <a href="#portfolio"  data-i18n="nav.portfolio">Portfolio</a>
+      <a href="#servicos"   data-i18n="nav.services">Serviços</a>
+      <a href="#sobre"      data-i18n="nav.about">Sobre</a>
+      <a href="#contato"    data-i18n="nav.contact">Contato</a>
     </nav>
     <div class="nav-right">
       <div class="lang-toggle" role="group" aria-label="Idioma / Language">
@@ -691,6 +746,75 @@ img { display: block; max-width: 100%; }
           </div>
         </article>
 
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section id="servicos" class="servicos">
+  <div class="wrap">
+    <div class="srv-head fade-up">
+      <span class="sobre-badge" data-i18n="services.badge">Serviços</span>
+      <h2 class="s-title srv-title" data-i18n="services.title">Três formatos. Escolha o que faz sentido pro seu canal.</h2>
+    </div>
+
+    <div class="srv-grid fade-up">
+
+      <!-- Card 1 -->
+      <div class="srv-card">
+        <div class="srv-card-top">
+          <span class="srv-tag">PRPROJ</span>
+          <span class="srv-filename">edicao_longa</span>
+        </div>
+        <h3 class="srv-name" data-i18n="services.p1.name">Vídeos Longos</h3>
+        <p class="srv-desc" data-i18n="services.p1.desc">Pra quem precisa prender o público até o final — vlogs, podcasts, gameplay, documentário.</p>
+        <p class="srv-meta" data-i18n="services.p1.meta">TIPO: PROJETO PREMIERE · PRAZO: ATÉ 10 DIAS ÚTEIS</p>
+        <ul class="srv-list">
+          <li data-i18n="services.p1.f1">Edição completa com ritmo e narrativa</li>
+          <li data-i18n="services.p1.f2">Trilha sonora e efeitos sonoros</li>
+          <li data-i18n="services.p1.f3">Correção de cor</li>
+          <li data-i18n="services.p1.f4">Legendas estilizadas</li>
+        </ul>
+        <a href="#contato" class="srv-cta" data-i18n="services.cta">Abrir Projeto →</a>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="srv-card">
+        <div class="srv-card-top">
+          <span class="srv-tag srv-tag--mp4">MP4</span>
+          <span class="srv-filename">shorts_reels</span>
+        </div>
+        <h3 class="srv-name" data-i18n="services.p2.name">Shorts &amp; Reels</h3>
+        <p class="srv-desc" data-i18n="services.p2.desc">Conteúdo vertical que prende em menos de 3 segundos. Feito pra viralizar no Shorts, Reels e TikTok.</p>
+        <p class="srv-meta" data-i18n="services.p2.meta">TIPO: PROJETO PREMIERE · PRAZO: ATÉ 4 DIAS ÚTEIS</p>
+        <ul class="srv-list">
+          <li data-i18n="services.p2.f1">Edição dinâmica e impactante</li>
+          <li data-i18n="services.p2.f2">Corte sincronizado com a música</li>
+          <li data-i18n="services.p2.f3">Legendas estilizadas</li>
+          <li data-i18n="services.p2.f4">Formato 9:16 otimizado</li>
+        </ul>
+        <a href="#contato" class="srv-cta" data-i18n="services.cta">Abrir Projeto →</a>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="srv-card srv-card--highlight">
+        <div class="srv-badge-popular" data-i18n="services.popular">Mais pedido</div>
+        <div class="srv-card-top">
+          <span class="srv-tag srv-tag--zip">ZIP</span>
+          <span class="srv-filename">pacote_completo</span>
+        </div>
+        <h3 class="srv-name" data-i18n="services.p3.name">Pacote Completo</h3>
+        <p class="srv-desc" data-i18n="services.p3.desc">A solução total. Vídeo longo e cortes verticais, tudo com a mesma identidade visual.</p>
+        <p class="srv-meta" data-i18n="services.p3.meta">TIPO: PACOTE COMPRIMIDO · CONTÉM: 2 ITENS</p>
+        <ul class="srv-list">
+          <li data-i18n="services.p3.f1">Edição de vídeo longo</li>
+          <li data-i18n="services.p3.f2">Corte e edição de Shorts/Reels</li>
+          <li data-i18n="services.p3.f3">Mesma identidade visual entre os formatos</li>
+          <li data-i18n="services.p3.f4">Entrega combinada, um único prazo</li>
+        </ul>
+        <a href="#contato" class="srv-cta" data-i18n="services.cta">Abrir Projeto →</a>
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -837,6 +961,7 @@ document.addEventListener('click', function(e) {
 var T = {
   pt: {
     'nav.portfolio':    'Portfolio',
+    'nav.services':     'Serviços',
     'nav.about':        'Sobre',
     'nav.contact':      'Contato',
     'hero.eyebrow':     'Editor de Vídeo',
@@ -854,6 +979,31 @@ var T = {
     'contact.heading':  'Vamos trabalhar juntos?',
     'contact.sub':      'Me conta o seu projeto. Respondo em até 24h e dou uma devolutiva clara sobre como posso ajudar.',
     'contact.back':     '↑ Voltar ao topo',
+    'services.badge':   'Serviços',
+    'services.title':   'Três formatos. Escolha o que faz sentido pro seu canal.',
+    'services.popular': 'Mais pedido',
+    'services.cta':     'Abrir Projeto →',
+    'services.p1.name': 'Vídeos Longos',
+    'services.p1.desc': 'Pra quem precisa prender o público até o final — vlogs, podcasts, gameplay, documentário.',
+    'services.p1.meta': 'TIPO: PROJETO PREMIERE · PRAZO: ATÉ 10 DIAS ÚTEIS',
+    'services.p1.f1':   'Edição completa com ritmo e narrativa',
+    'services.p1.f2':   'Trilha sonora e efeitos sonoros',
+    'services.p1.f3':   'Correção de cor',
+    'services.p1.f4':   'Legendas estilizadas',
+    'services.p2.name': 'Shorts & Reels',
+    'services.p2.desc': 'Conteúdo vertical que prende em menos de 3 segundos. Feito pra viralizar no Shorts, Reels e TikTok.',
+    'services.p2.meta': 'TIPO: PROJETO PREMIERE · PRAZO: ATÉ 4 DIAS ÚTEIS',
+    'services.p2.f1':   'Edição dinâmica e impactante',
+    'services.p2.f2':   'Corte sincronizado com a música',
+    'services.p2.f3':   'Legendas estilizadas',
+    'services.p2.f4':   'Formato 9:16 otimizado',
+    'services.p3.name': 'Pacote Completo',
+    'services.p3.desc': 'A solução total. Vídeo longo e cortes verticais, tudo com a mesma identidade visual.',
+    'services.p3.meta': 'TIPO: PACOTE COMPRIMIDO · CONTÉM: 2 ITENS',
+    'services.p3.f1':   'Edição de vídeo longo',
+    'services.p3.f2':   'Corte e edição de Shorts/Reels',
+    'services.p3.f3':   'Mesma identidade visual entre os formatos',
+    'services.p3.f4':   'Entrega combinada, um único prazo',
   },
   en: {
     'nav.portfolio':    'Portfolio',
@@ -874,6 +1024,31 @@ var T = {
     'contact.heading':  'Let\'s work together?',
     'contact.sub':      'Tell me about your project. I reply within 24h with a clear take on how I can help.',
     'contact.back':     '↑ Back to top',
+    'services.badge':   'Services',
+    'services.title':   'Three formats. Choose what makes sense for your channel.',
+    'services.popular': 'Most requested',
+    'services.cta':     'Open Project →',
+    'services.p1.name': 'Long-form Videos',
+    'services.p1.desc': 'For those who need to keep the audience engaged until the end — vlogs, podcasts, gameplay, documentary.',
+    'services.p1.meta': 'TYPE: PREMIERE PROJECT · DEADLINE: UP TO 10 BUSINESS DAYS',
+    'services.p1.f1':   'Full editing with pacing and narrative',
+    'services.p1.f2':   'Soundtrack and sound effects',
+    'services.p1.f3':   'Color correction',
+    'services.p1.f4':   'Stylized captions',
+    'services.p2.name': 'Shorts & Reels',
+    'services.p2.desc': 'Vertical content that hooks in under 3 seconds. Made to go viral on Shorts, Reels and TikTok.',
+    'services.p2.meta': 'TYPE: PREMIERE PROJECT · DEADLINE: UP TO 4 BUSINESS DAYS',
+    'services.p2.f1':   'Dynamic and impactful editing',
+    'services.p2.f2':   'Cut synchronized to the music',
+    'services.p2.f3':   'Stylized captions',
+    'services.p2.f4':   'Optimized 9:16 format',
+    'services.p3.name': 'Complete Package',
+    'services.p3.desc': 'The total solution. Long video and vertical cuts, all with the same visual identity.',
+    'services.p3.meta': 'TYPE: BUNDLED PACKAGE · CONTAINS: 2 ITEMS',
+    'services.p3.f1':   'Long-form video editing',
+    'services.p3.f2':   'Shorts/Reels cut and editing',
+    'services.p3.f3':   'Same visual identity across formats',
+    'services.p3.f4':   'Combined delivery, single deadline',
   }
 };
 

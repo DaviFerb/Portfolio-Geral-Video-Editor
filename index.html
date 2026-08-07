@@ -428,6 +428,18 @@ img { display: block; max-width: 100%; }
 
 .c-platform { font-size: .67rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
 .c-handle { font-size: .88rem; font-weight: 500; color: var(--ink); margin-top: .1rem; }
+.c-email-row {
+  display: flex; align-items: center; gap: 0.75rem;
+  background: #161616; border: 1px solid var(--border); border-radius: var(--r);
+  padding: 0.9rem 1.1rem; color: var(--ink); margin-bottom: 0.85rem;
+  transition: border-color var(--t), transform var(--t), box-shadow var(--t);
+}
+.c-email-row:hover { border-color: rgba(255,255,255,0.18); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.06); }
+.c-email-icon { display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 10px; background: #1e1e1e; color: #E0E0E0; flex-shrink: 0; }
+.c-email-icon svg { width: 19px; height: 19px; }
+.c-email-addr { font-size: .88rem; font-weight: 500; color: var(--ink); flex: 1; }
+.c-email-arrow { font-size: .85rem; color: var(--muted); transition: color var(--t), transform var(--t); }
+.c-email-row:hover .c-email-arrow { color: var(--ink); transform: translate(2px,-2px); }
 .c-card-arrow { font-size: .85rem; color: var(--muted); margin-left: auto; transition: color var(--t), transform var(--t); }
 .c-card:hover .c-card-arrow { color: var(--ink); transform: translate(2px,-2px); }
 .back-top {
@@ -987,6 +999,14 @@ img { display: block; max-width: 100%; }
       <span class="c-badge"><span class="c-dot"></span><span data-i18n="contact.badge">Contato</span></span>
       <h2 class="c-heading" data-i18n="contact.heading">Vamos trabalhar juntos?</h2>
       <p class="c-sub" data-i18n="contact.sub">Me conta o seu projeto. Respondo em até 24h e dou uma devolutiva clara sobre como posso ajudar.</p>
+
+      <a href="mailto:daviferrb011@gmail.com" class="c-email-row">
+        <span class="c-email-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+        </span>
+        <span class="c-email-addr">daviferrb011@gmail.com</span>
+        <span class="c-email-arrow" aria-hidden="true">→</span>
+      </a>
 
       <div class="c-grid">
 

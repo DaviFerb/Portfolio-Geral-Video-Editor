@@ -342,6 +342,29 @@ img { display: block; max-width: 100%; }
 .skill-tag:hover { border-color: var(--accent); color: var(--accent); }
 
 /* ── CONTATO ── */
+/* ─── FAQ ─── */
+.faq { padding: 7rem 0; border-top: 1px solid var(--border); }
+.faq-head { margin-bottom: 2.5rem; }
+.faq-sub { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.18); margin-top: 0.5rem; font-family: monospace; }
+.faq-list { border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-item:last-child { border-bottom: none; }
+.faq-q {
+  width: 100%; display: flex; align-items: center; gap: 1rem;
+  padding: 1.1rem 1.4rem; background: transparent; border: none; cursor: pointer;
+  font-family: var(--f); font-size: 0.88rem; font-weight: 500;
+  color: var(--ink); text-align: left; transition: background var(--t);
+}
+.faq-q:hover { background: rgba(255,255,255,0.04); }
+.faq-q[aria-expanded="true"] { background: rgba(255,255,255,0.06); }
+.faq-num { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.08em; color: rgba(255,255,255,0.25); flex-shrink: 0; font-family: monospace; }
+.faq-icon { margin-left: auto; flex-shrink: 0; font-size: 1.1rem; font-weight: 300; color: var(--muted); transition: transform var(--t), color var(--t); line-height: 1; }
+.faq-q[aria-expanded="true"] .faq-icon { transform: rotate(45deg); color: var(--ink); }
+.faq-a { padding: 1rem 1.4rem 1.5rem calc(1.4rem + 2.5rem); animation: faqIn 0.25s ease; }
+@keyframes faqIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+.faq-a p { font-size: 0.86rem; font-weight: 300; color: var(--muted); line-height: 1.8; }
+.faq-a strong { color: var(--ink); font-weight: 600; }
+
 .contato { padding: 7rem 0; border-top: 1px solid var(--border); text-align: center; }
 .contato-in { max-width: 560px; margin: 0 auto; }
 .c-badge {
@@ -848,6 +871,98 @@ img { display: block; max-width: 100%; }
   </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq" class="faq">
+  <div class="wrap">
+    <div class="faq-head fade-up">
+      <span class="sobre-badge" data-i18n="faq.badge">FAQ</span>
+      <h2 class="s-title" data-i18n="faq.title">Perguntas Frequentes</h2>
+      <p class="faq-sub" data-i18n="faq.sub">MANUAL_DO_CLIENTE.pdf</p>
+    </div>
+
+    <div class="faq-list fade-up">
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span class="faq-num">§01</span>
+          <span data-i18n="faq.q1">Como funciona a cobrança?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a" hidden>
+          <p data-i18n="faq.a1">A cobrança é feita por <strong>valor fixo por projeto</strong>, combinado no briefing. Para projetos maiores, também trabalho por hora editada.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span class="faq-num">§02</span>
+          <span data-i18n="faq.q2">Qual é o prazo de entrega?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a" hidden>
+          <p data-i18n="faq.a2">Vídeos longos saem em até <strong>3 a 10 dias úteis</strong> após o recebimento do material. Shorts e Reels em até <strong>4 dias úteis</strong>. Motion e identidade combinamos no briefing. Artes, thumbnails e sprites de 4 a 14 dias após a confirmação do pagamento.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span class="faq-num">§03</span>
+          <span data-i18n="faq.q3">Quantas revisões estão incluídas?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a" hidden>
+          <p data-i18n="faq.a3">São <strong>3 rodadas de revisão</strong> incluídas. Se precisar de mais, resolvemos juntos — o objetivo é você ficar 100% satisfeito.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span class="faq-num">§04</span>
+          <span data-i18n="faq.q4">Como funciona o pagamento?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a" hidden>
+          <p data-i18n="faq.a4"><strong>50% de entrada</strong> antes de começar, os outros 50% na entrega. Aceito Pix, PayPal, transferência e outros meios combinados pelo WhatsApp.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span class="faq-num">§05</span>
+          <span data-i18n="faq.q5">Em quais formatos você entrega?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a" hidden>
+          <p data-i18n="faq.a5"><strong>MP4 (H.264/H.265)</strong> na proporção certa pra cada plataforma — 16:9 no YouTube, 9:16 no Shorts/Reels/TikTok. Formato diferente? É só pedir.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span class="faq-num">§06</span>
+          <span data-i18n="faq.q6">Como envio o material?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a" hidden>
+          <p data-i18n="faq.a6">Prefiro receber via <strong>Google Drive ou WeTransfer</strong>. Manda o link com tudo — gravações, áudios, referências — e eu começo assim que a entrada for confirmada.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span class="faq-num">§07</span>
+          <span data-i18n="faq.q7">E se eu cancelar o projeto?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a" hidden>
+          <p data-i18n="faq.a7"><strong>Antes do início:</strong> reembolso integral. <strong>Depois do início, antes da 1ª prévia:</strong> 50% de reembolso. <strong>Depois da 1ª prévia:</strong> sem reembolso — o trabalho já foi feito.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- CONTATO -->
 <section id="contato" class="contato">
   <div class="wrap">
@@ -1099,7 +1214,28 @@ function detectLang() {
 /* ─── Public toggle ─── */
 window.setLang = function(lang) { applyLang(lang); };
 
-/* ─── Tabs ─── */
+/* ─── FAQ accordion ─── */
+document.querySelectorAll('.faq-q').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var item   = btn.closest('.faq-item');
+    var answer = item.querySelector('.faq-a');
+    var open   = btn.getAttribute('aria-expanded') === 'true';
+
+    /* Fechar todos */
+    document.querySelectorAll('.faq-q').forEach(function(b) {
+      b.setAttribute('aria-expanded', 'false');
+      b.closest('.faq-item').querySelector('.faq-a').hidden = true;
+    });
+
+    /* Abrir o clicado (se estava fechado) */
+    if (!open) {
+      btn.setAttribute('aria-expanded', 'true');
+      answer.hidden = false;
+    }
+  });
+});
+
+
 document.querySelectorAll('.tab-btn').forEach(function(btn) {
   btn.addEventListener('click', function() {
     var panelId = btn.getAttribute('aria-controls');
